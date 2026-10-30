@@ -1,0 +1,114 @@
+/* ARES simulation — page content (Start, Results, Briefing, Model & sources), plain-language step text, popovers */
+(function (A) {
+'use strict';
+const C = A.core, Mo = A.model, PN = A.panels, PG = A.pages = {};
+const f0 = v => Math.round(v).toLocaleString('en-IN'), f1 = v => (+v).toFixed(1), pc = v => (v * 100).toFixed(0) + '%', pc1 = v => (v * 100).toFixed(1) + '%';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* plain-language story for each of the 11 steps */
+PG.SIMPLE = [
+  { s: 'Something has happened. Alerts and the first calls for help arrive.', w: 'ARES starts the moment a disaster is reported. Weather warnings, sensor alerts and the first phone calls mark where it happened, and an incident is opened around that point.', see: ['Red pulse: the reported location', 'Blue beams: the first calls for help'] },
+  { s: 'We map where the ground was damaged and how badly.', w: 'Using the terrain, rivers and the spread of mud, water or rubble, ARES draws the damaged area and grades how severe each part is.', see: ['Glowing area: ground hit by the disaster', 'White dashed line: edge of the hazard', 'Yellow dashed line: the path the flow took'] },
+  { s: 'We estimate where people are likely to be, before anyone has looked.', w: 'Every house is counted and multiplied by how many people usually live there and how badly it was hit. The result is a map of where help is most likely needed. Every later step reads this map.', see: ['Taller, redder bars: more people expected there'] },
+  { s: 'We decide which areas deserve the most searching.', w: 'With only a few balloons available, ARES uses a classic search theory (Koopman) to spread searching effort where it is most likely to pay off.', see: ['Bar colour: how much searching each area deserves'] },
+  { s: 'We find safe, open spots where a balloon can be tied down.', w: 'A balloon on a tether needs firm, open ground. Water, mud, steep slopes, buildings and trees are ruled out.', see: ['Green pins: usable spots', 'Red pins: ruled out (click one to see why)'] },
+  { s: 'For each spot we check what a balloon there could see and talk to.', w: 'From each spot ARES works out the camera’s view on the ground, whether hills block the view, and whether a phone signal at 866 MHz would get through.', see: ['Cones: what a balloon would see', 'Green lines: clear view · Red lines: blocked by terrain'] },
+  { s: 'We pick the fewest balloons that can cover most of the people.', w: 'Balloons are added one at a time, always choosing the spot that covers the most people still uncovered, until enough are covered. This greedy method uses far fewer balloons than simpler ways of placing them.', see: ['Each new cone: one more balloon picked', 'Bars turn grey once they are covered'] },
+  { s: 'The balloons go up, and each one connects back to the command post.', w: 'Teams carry each balloon to its spot and raise it. Every balloon must be able to send data back to the command post; if a hill blocks the signal, a relay balloon is added.', see: ['Balloons rising on tethers', 'Blue lines: radio links back to the command post'] },
+  { s: 'Cameras and phone signals start finding people.', w: 'Each balloon carries a camera (normal and thermal) and listens for phones and beacons. People inside a balloon’s view can be spotted; people with a working phone can be contacted.', see: ['Orange dots: found by camera', 'Blue dots: found by phone or beacon'] },
+  { s: 'What we found corrects the map, and a new call for help adds balloons.', w: 'The people found are used to correct the estimate everywhere, including areas no camera could see (with a measure of how unsure we are). A new cluster of calls arrives, and new balloons are added without moving the old ones.', see: ['Bars update to the corrected estimate', 'Purple haze: areas we are less sure about', 'Pulsing ring: the new call for help'] },
+  { s: 'Rescue teams get areas to search, how many people to expect, and the way in.', w: 'The area is split into sectors, one per balloon. Each sector gets the number of people confirmed and expected, a priority, and a walking (or boat) route from the command post.', see: ['Coloured zones: rescue sectors', 'Yellow lines: routes from the command post'] },
+];
+
+PG.numbers = function (n, app) {
+  const o = app.out, s = o.steps, T = (k, v, sub, sim) => ({ k, v, sub, sim });
+  switch (n) {
+    case 1: return [T('Alerts received', s.detect.alerts.length), T('Early calls for help', s.detect.early.length, 'simulated', 1), T('Area studied', `${f1(o.T.S / 1000)}×${f1(o.T.S / 1000)} km`)];
+    case 2: return [T('Damaged ground', s.evaluate.dmgKm2.toFixed(2) + ' km²'), T('Structures hit', f0(s.evaluate.collapsed + s.evaluate.flooded), 'simulated', 1), T('Buildings mapped', f0(s.evaluate.buildings))];
+    case 3: return [T('People expected to need help', f0(s.belief.lamTot), 'scaled from reports', 1), T('High-priority areas', s.belief.p3, 'cells of ' + f0(s.belief.cellSize) + ' m')];
+    case 4: return [T('Chance of finding someone', pc(s.koopman.pDetect), 'with ideal search effort'), T('Areas worth searching', Array.from(s.koopman.phi).filter(v => v > 0).length)];
+    case 5: return [T('Usable spots', s.sites.valid), T('Ruled out', s.sites.rejected.length), T('People reachable from usable spots', pc(o.reach))];
+    case 6: return [T('Camera view radius', f0(s.coverage.r0) + ' m', 'at ' + o.p.h + ' m height'), T('Spot–area pairs that work', f0(o.cc.cov.reduce((a, b) => a + b, 0)))];
+    case 7: { const sol = s.optimise.sol, k = app.pick, cv = k ? sol[k - 1].cov : 0; return [T('Balloons picked', `${k} of ${sol.length}`), T('People covered', pc(cv), 'target ' + pc(o.tEff)), T('k-means would need', s.optimise.base.needKmeans ?? '> ' + (s.optimise.base.kmeans.length - 1)), T('Theoretical minimum', '≥ ' + s.optimise.lb)]; }
+    case 8: return [T('Balloons up', o.nodes.filter(x => !x.replan).length), T('Relay balloons', s.deploy.relays), T('Linked to command post', `${s.deploy.con.ok.filter(Boolean).length}/${o.nodes.length}`), T('Last balloon up after', Math.max(...o.nodes.filter(x => !x.replan).map(x => x.eta)) + ' min', 'simulated', 1)];
+    case 9: return [T('People found', f0(s.update.gp1.confirmed), 'first wave', 1), T('By camera', s.sense.thermal, '', 1), T('By phone / beacon', s.sense.beacon, '', 1)];
+    case 10: return [T('Estimated total', f0(s.update.gp2.estTotal), '± ' + f0(1.64 * s.update.gp2.estSd) + ' (90%)', 1), T('New calls for help', s.update.sos ? s.update.sos.n : 0, '', 1), T('Balloons added', '+' + s.update.added), T('True total (sim only)', f0(s.update.gp2.trueTotal), 'for checking', 1)];
+    case 11: return [T('Rescue sectors', s.handover.sectors), T('Routes planned', s.handover.routes), T('People confirmed', f0(s.update.gp2.confirmed), '', 1), T('Sector estimate error', f1(s.handover.mae) + ' people', 'average', 1)];
+  }
+  return [];
+};
+PG.tiles = arr => `<div class="ntiles">${arr.map(t => `<div class="tile"><span class="k">${t.k}</span><span class="v" ${t.sim ? 'data-sim' : ''}>${t.v}</span>${t.sub ? `<span class="s">${t.sub}</span>` : ''}</div>`).join('')}</div>`;
+PG.explain = function (n, app) {
+  const st = A.pipe.STEPS[n - 1], sp = PG.SIMPLE[n - 1];
+  return `<div class="explain"><p class="big">${sp.s}</p><p>${sp.w}</p><p class="muted small" style="margin-bottom:6px"><b>On the map</b></p><ul>${sp.see.map(x => `<li>${x}</li>`).join('')}</ul></div>
+  <div class="card" style="padding:14px 16px"><h3 style="font-size:14px">In technical terms</h3><p class="small muted" style="margin:0">${st.d}</p></div>`;
+};
+
+/* ---------- popovers ---------- */
+PG.layersPop = function (app) {
+  const L = app.L, groups = [['Hazard', 'Disaster'], ['Model', 'Model results'], ['Field assets', 'Balloons & people'], ['Display', 'Map']];
+  const row = l => { const st = L[l.k] || { on: true }; return `<label class="lyr"><input type="checkbox" data-layer="${l.k}" ${st.on ? 'checked' : ''} ${l.fixed ? 'disabled' : ''}><span class="sw" style="background:${l.sw}"></span><span>${l.t}</span>${l.a && st.on ? `<span></span><span></span><input type="range" min="0" max="100" value="${Math.round((st.a ?? 1) * 100)}" data-alpha="${l.k}" aria-label="${l.t} opacity">` : ''}</label>`; };
+  return `<h4>Layers <button class="btn ghost sm" data-close>×</button></h4>` + groups.map(([g, t]) => `<div class="grp">${t}</div>${PN.LAYERS.filter(l => l.g === g && !l.fixed).map(row).join('')}`).join('');
+};
+PG.modePop = app => `<h4>View mode <button class="btn ghost sm" data-close>×</button></h4>${PN.MODES.map(([k, t, d]) => `<label class="opt"><input type="radio" name="vmode" value="${k}" ${app.mode === k ? 'checked' : ''}><span>${t}<small>${d}</small></span></label>`).join('')}`;
+PG.viewsPop = () => `<h4>Camera views <button class="btn ghost sm" data-close>×</button></h4>${[['overview', 'Whole area'], ['source', 'Where it started'], ['runout', 'Along the path'], ['deposition', 'Downstream / end'], ['icp', 'Command post'], ['top', 'Straight down']].map(([k, t]) => `<button class="btn" data-view="${k}" style="justify-content:flex-start">${t}</button>`).join('')}<button class="btn primary" data-view="tour">Play guided tour</button>`;
+
+/* ---------- Start page ---------- */
+PG.start = function (app) {
+  const PKb = (A.pack && A.pack.base) || 'data/', img = sc => PKb + sc.id + '/imagery/' + (sc.id === 'assam' || sc.id === 'delhi' ? (sc.id === 'assam' ? 's2_pre' : 's2_post') : 's2_post') + '.jpg';
+  return `<div><h1>See how ARES finds people after a disaster</h1><p class="lede">ARES raises a few tethered aerostats with cameras and radios over a disaster area. This simulation runs every stage, from the first alert to handing rescue teams a map of where people are, on real terrain, satellite imagery, buildings and population for four real events and one hypothetical one.</p></div>
+  <div class="how"><div><b>1 · Understand</b>Map the observed damage and estimate where people are.</div><div><b>2 · Place</b>Pick the fewest aerostat sites that see the most people.</div><div><b>3 · Find</b>Cameras and phone signals locate survivors (simulated).</div><div><b>4 · Hand over</b>Give rescue teams sectors, numbers and routes.</div></div>
+  <div class="scards">${C.SCENARIOS.map((sc, i) => `<button class="scard" data-open="${i}"><div class="art" style="background-image:url(${img(sc)})"><span class="tag">${sc.sources.length ? 'Real event' : 'Hypothetical'}</span></div><div class="body"><h3>${esc(sc.name)}</h3><p>${esc(sc.place)} · ${esc(sc.start)}</p><p>${esc(sc.type)}</p><div class="facts">${sc.reported.slice(0, 2).map(r => `<span>${esc(r[0])} <b data-real>${esc(r[1])}</b></span>`).join('')}</div></div></button>`).join('')}</div>
+  <p class="src">Terrain: Copernicus DEM GLO-30. Imagery: Copernicus Sentinel-2 (Sentinel-1 radar for the Assam flood). Roads, rivers, places: © OpenStreetMap contributors. Buildings: OpenStreetMap + Google Open Buildings. Population: WorldPop 2020. Hazard extents are derived from satellite change detection, not official maps. People, detections and estimates are simulated. Full provenance under Model &amp; sources.</p>`;
+};
+PG.drawThumb = () => {};
+
+/* ---------- Results page ---------- */
+PG.results = function (app) {
+  const o = app.out, s = o.steps, op = s.optimise, b = op.base, u = s.update;
+  const tiles = [['Balloons needed', op.sol.length, `k-means needs ${b.needKmeans ?? '> ' + (b.kmeans.length - 1)} · random ${b.needRandom ?? '> ' + (b.random.length - 1)}`], ['People covered', pc(op.cov), o.tEff < o.p.target - 1e-6 ? `target capped at ${pc(o.tEff)} (reachable ${pc(o.reach)})` : `target ${pc(o.tEff)}`], ['People found', f0(u.gp2.confirmed), `of ${f0(u.gp2.trueTotal)} simulated`, 1], ['Estimate of total', f0(u.gp2.estTotal), `± ${f0(1.64 * u.gp2.estSd)} · true ${f0(u.gp2.trueTotal)}`, 1]];
+  const meth = [['Greedy (ARES)', op.sol.length, pc1(op.cov)], ['k-means + snap', b.needKmeans ?? '> ' + (b.kmeans.length - 1), pc1(b.kmeans[b.needKmeans ?? b.kmeans.length - 1])], ['Random placement', b.needRandom ?? '> ' + (b.random.length - 1), pc1(b.random[b.needRandom ?? b.random.length - 1])], ['Uniform hex grid', b.grid.n, pc1(b.grid.cov)], ['Theoretical minimum', '≥ ' + op.lb, '—']];
+  const mc = app.mc, hs = app.hs, avg = a => a.reduce((x, y) => x + y, 0) / (a.length || 1);
+  return `<div><h1>Results · ${esc(o.sc.name)}</h1><p class="lede">How well ARES did in this scenario, and how it compares with other ways of placing balloons.</p></div>
+  <div class="tiles">${tiles.map(t => `<div class="tile"><span class="k">${t[0]}</span><span class="v" ${t[3] ? 'data-sim' : ''}>${t[1]}</span><span class="s">${t[2]}</span></div>`).join('')}</div>
+  <div class="grid2">
+    <div class="card chart"><h3>Fewer balloons for the same coverage <small id="c2s"></small></h3><canvas id="c2"></canvas><p class="small muted" style="margin:0">Each line shows how much of the expected need is covered as balloons are added. Lower and further left is better. Red dashed line: target.</p></div>
+    <div class="card chart"><h3>People: expected vs found <small>simulation</small></h3><canvas id="c1"></canvas><p class="small muted" style="margin:0">From the first estimate, through the people found, to the corrected estimate (with its 90% range) and the simulated truth.</p></div>
+    <div class="card chart"><h3>Can a balloon talk to the command post? <select id="losSel" class="small" style="border:1px solid var(--line);border-radius:8px;padding:3px 6px;background:var(--surface)">${o.nodes.map((n, i) => `<option value="${i}" ${i === (app.sel ?? 0) ? 'selected' : ''}>${n.id}</option>`).join('')}</select></h3><canvas id="c3"></canvas><p class="small muted" style="margin:0" id="c3s"></p></div>
+    <div class="card chart"><h3>How much each balloon contributes <small>Shapley value</small></h3><canvas id="shC"></canvas><p class="small muted" style="margin:0">Average share of coverage each balloon adds, over every possible order of adding them.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Method comparison <small>balloons to reach ${pc(o.tEff)}</small></h3><table class="t"><thead><tr><th>Method</th><th>Balloons</th><th>Coverage</th></tr></thead><tbody>${meth.map(r => `<tr><td>${r[0]}</td><td class="mono">${r[1]}</td><td class="mono">${r[2]}</td></tr>`).join('')}</tbody></table><div class="row"><button class="btn" data-act="compare">See greedy vs k-means on the map</button></div></div>
+    <div class="card"><h3>Does it hold up? <small>${mc ? mc.length + ' random runs' : 'Monte Carlo'}</small></h3>${mc ? `<canvas class="mini" id="mcC"></canvas><dl class="kv"><dt>Balloons</dt><dd class="mono">${f1(avg(mc.map(r => r.nodes)))} on average</dd><dt>People found</dt><dd class="mono" data-sim>${pc(avg(mc.map(r => r.det)))} on average</dd><dt>Target met</dt><dd class="mono">${mc.filter(r => r.met).length} of ${mc.length} runs</dd></dl>` : '<p class="muted small" style="margin:0">Re-runs everything 30 times with different people layouts and radio conditions.</p>'}<div class="row"><button class="btn" id="btnMC">${mc ? 'Run again' : 'Run 30 trials'}</button><span id="mcProg" class="small muted"></span></div></div>
+    <div class="card"><h3>Best balloon height</h3>${hs ? `<canvas class="mini" id="hsC"></canvas><p class="small muted" style="margin:0">Balloons needed at each height (camera view ${o.p.fov}°). Grey: target not reached.</p>` : '<p class="muted small" style="margin:0">Tries six heights from 60 m to 320 m and counts balloons needed.</p>'}<div class="row"><button class="btn" id="btnHS">${hs ? 'Run again' : 'Run height sweep'}</button></div></div>
+    <div class="card"><h3>All five disasters</h3><div id="crossOut"><p class="muted small" style="margin:0">Runs the full model on every scenario and compares them side by side.</p></div><div class="row"><button class="btn" id="btnCross">Compare all scenarios</button></div></div>
+  </div>
+  <div class="card"><h3>Balloon fleet</h3><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px">${o.nodes.map((n, i) => `<div class="nodecard" data-node="${i}"><span class="id">${n.id}</span><span><span class="role ${n.replan ? 'replan' : n.role}">${n.replan ? 'added later' : n.role === 'relay' ? 'relay' : 'camera'}</span></span><span class="mono small">${pc1(n.shap || 0)}</span><span class="sm">${n.hop > 0 ? n.hop + ' hop link' : 'no link'} · up after ${n.eta} min</span></div>`).join('')}</div><p class="small muted" style="margin:0">Click a balloon to see it on the map.</p></div>`;
+};
+
+/* ---------- Briefing page ---------- */
+PG.brief = function (app) {
+  const o = app.out, rs = o.sectors || [], u = o.steps.update;
+  const p1 = rs.filter(r => r.pri === 1).length;
+  return `<div><h1>Rescue briefing</h1><p class="lede">What the rescue teams receive at the end: where to search first, how many people to expect, and how to get there from the command post.</p></div>
+  <div class="tiles"><div class="tile"><span class="k">Search sectors</span><span class="v">${rs.length}</span><span class="s">one per camera balloon</span></div><div class="tile"><span class="k">Top-priority sectors</span><span class="v">${p1}</span><span class="s">search these first</span></div><div class="tile"><span class="k">People confirmed</span><span class="v" data-sim>${f0(u.gp2.confirmed)}</span><span class="s">seen or contacted</span></div><div class="tile"><span class="k">People expected</span><span class="v" data-sim>${f0(u.gp2.estTotal)}</span><span class="s">± ${f0(1.64 * u.gp2.estSd)} (90% range)</span></div></div>
+  <div class="card"><h3>Sectors in order of priority <small>click a row to see it on the map</small></h3><div class="tw"><table class="t"><thead><tr><th>#</th><th>Sector</th><th>Priority</th><th>Confirmed</th><th>Expected (90% range)</th><th>Route from command post</th><th>Location</th></tr></thead><tbody>${rs.map(r => `<tr class="hov" data-sector-x="${r.cx}" data-sector-y="${r.cy}"><td>${r.rank}</td><td class="mono">${r.id}</td><td><span class="pill p${r.pri}">${r.pri === 1 ? 'Search first' : r.pri === 2 ? 'Next' : 'Later'}</span></td><td class="mono" data-sim>${f0(r.conf)}</td><td class="mono" data-sim>${f0(r.est)} ± ${f0(1.64 * r.sd)}</td><td class="mono">${r.route ? f1(r.route.len / 1000) + ' km' + (r.route.boat ? ' by boat' : ' on foot') : '—'}</td><td class="mono small">${r.lat.toFixed(4)}°N ${r.lon.toFixed(4)}°E</td></tr>`).join('')}</tbody></table></div></div>
+  <div class="card"><h3>Hand it over</h3><p class="muted small" style="margin:0">Copy the briefing for field teams or other systems.</p><div class="row"><button class="btn primary" id="btnCSV">Copy as spreadsheet (CSV)</button><button class="btn" id="btnBriefJSON">Copy as JSON</button><button class="btn" data-act="sectormap">Show sectors on the map</button></div></div>`;
+};
+
+/* ---------- Model & sources page ---------- */
+PG.model = function (app) {
+  const o = app.out, sc = o.sc;
+  return `<div><h1>Model &amp; sources</h1><p class="lede">The real facts behind this scenario, what is simulated, and every setting the model uses.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>About this disaster <small class="mono">${sc.code}</small></h3><dl class="kv"><dt>Event</dt><dd>${esc(sc.name)}</dd><dt>Location</dt><dd>${esc(sc.place)}</dd><dt>Centre</dt><dd class="mono">${sc.lat.toFixed(3)}°N, ${sc.lon.toFixed(3)}°E</dd><dt>When</dt><dd data-real>${esc(sc.start)}</dd><dt>What happened</dt><dd>${esc(sc.type)}</dd>${sc.reported.map(r => `<dt>${esc(r[0])}</dt><dd data-real>${esc(r[1])}</dd>`).join('')}</dl><p class="src" style="margin:0">${sc.sources.map(k => `<a href="${C.SRC[k].u}" target="_blank" rel="noopener">${esc(C.SRC[k].t)}</a>`).join('<br>') || 'Hypothetical scenario — not a real event.'}</p></div>
+    <div class="card"><h3>Real, derived, modelled, assumed or simulated?</h3><p class="muted small" style="margin:0">Every layer carries a tier. Real: elevation, imagery, land cover, roads, rivers, places and mapped buildings. Derived: hazard extents from satellite change detection, ML building footprints, the descent path. Modelled: resident population (WorldPop) and every ARES model output. Assumed: camera, radio and detection parameters, building heights where unmapped, the "need help" figure. Synthetic: the individual survivors and their detections.</p><label class="switch"><input type="checkbox" id="honesty" ${document.body.classList.contains('honesty') ? 'checked' : ''}>Mark simulated numbers across the app</label>
+      <h3 style="margin-top:6px">Conditions <small>scenario assumptions</small></h3><dl class="kv"><dt>Wind</dt><dd data-sim>${sc.cond.wind} km/h (aerostat drift ${o.p.drift} m)</dd><dt>Rain</dt><dd data-sim>${esc(sc.cond.rain)}</dd><dt>Water</dt><dd data-sim>${esc(sc.cond.water)}</dd><dt>Visibility</dt><dd data-sim>${esc(sc.cond.vis)}</dd><dt>Temperature</dt><dd data-sim>${sc.cond.temp} °C</dd></dl></div>
+    <div class="card"><h3>Terrain &amp; data pack <small class="mono">${app.built && app.built.real ? 'real data' : 'synthetic fallback'}</small></h3>${(() => { const L = (app.built && app.built.layers) || {}, r = k => L[k] && L[k].rec; const rows = [['Elevation', L.terrain], ['Imagery', L.imagery], ['Pre-event imagery', L.imageryPre], ['Land cover', L.landcover], ['Roads / rivers', L.roads], ['Buildings', L.buildings], ['Population', L.population], ['Hazard extent', L.hazard]].filter(x => x[1]); return `<table class="t"><tbody>${rows.map(([k, l]) => `<tr><td>${k}</td><td><span class="tier ${l.tier}">${l.tier}</span> ${l.rec ? esc(l.rec.source_name) + (l.rec.observation_start ? ' · ' + esc(String(l.rec.observation_start).slice(0, 10)) : '') : ''}${l.note ? `<br><span class="muted small">${esc(l.note)}</span>` : ''}</td></tr>`).join('')}</tbody></table>`; })()}
+      <dl class="kv"><dt>Model area</dt><dd class="mono small">${(o.T.S / 1000).toFixed(1)} × ${(o.T.S / 1000).toFixed(1)} km around ${sc.lat.toFixed(4)}°N ${sc.lon.toFixed(4)}°E (azimuthal equidistant projection)</dd><dt>Grid</dt><dd>${o.T.G}×${o.T.G} nodes at ${o.T.cell.toFixed(1)} m; DEM native ≈30 m (so the grid adds no new detail); belief grid ${o.B.CB}×${o.B.CB} at ${Math.round(o.B.cs)} m</dd><dt>Display</dt><dd>Vertical exaggeration ×${o.T.vex} (display only; the model uses true metres)</dd></dl>
+      <div class="row"><button class="btn" id="btnManifest">Copy data manifest</button><button class="btn" id="btnDEM">Load your own elevation (GeoTIFF)</button></div></div>
+  </div>
+  <div><h2>Model settings</h2><p class="lede" style="font-size:14.5px">Change any setting, then press Re-run model.</p></div>
+  <div class="grid3" id="paramGrid">${PN.model(app).replace(/<div class="card"><h4>/g, '<div class="card"><h3>').replace(/<\/h4>/g, '</h3>')}</div>`;
+};
+})(window.ARES);

@@ -1,0 +1,36 @@
+{
+ "sun": {
+  "s2_pre": {
+   "azimuth": 139.660326409869,
+   "elevation": 54.3654113761748,
+   "datetime": "2024-02-05T05:35:45.515000Z"
+  },
+  "s2_post": {
+   "azimuth": 152.382597621738,
+   "elevation": 50.9294620888338,
+   "datetime": "2024-12-16T05:35:46.705000Z"
+  }
+ },
+ "id": "wayanad",
+ "lat": 11.487,
+ "lon": 76.15,
+ "S": 6000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5.0,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+ "event": "2024-07-29T20:47:00Z",
+ "event_note": "30 Jul 2024, 02:17 and ~04:10 IST",
+ "hazard": "debris",
+ "aoi_reason": "Centred on the debris-flow scar mapped from Sentinel-2 (5 Feb vs 16 Dec 2024); covers the source zone, Mundakkai and Chooralmala.",
+ "icp_hint": [
+  1500,
+  2600
+ ],
+ "s2_pre": "S2B_43PFN_20240205_0_L2A",
+ "s2_post": "S2A_43PFN_20241216_0_L2A",
+ "s1_pre": null,
+ "s1_post": null,
+ "processing_version": "0.4.0"
+}

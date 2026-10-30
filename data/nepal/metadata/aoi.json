@@ -1,0 +1,41 @@
+{
+ "sun": {
+  "s2_pre": {
+   "azimuth": 160.493049881485,
+   "elevation": 48.8416690999687,
+   "datetime": "2025-10-21T05:10:49.074000Z"
+  },
+  "s2_post": {
+   "azimuth": 154.336128380969,
+   "elevation": 55.5576755979422,
+   "datetime": "2026-10-01T05:10:50.234000Z"
+  }
+ },
+ "id": "nepal",
+ "lat": 28.265,
+ "lon": 85.372,
+ "S": 6000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5.0,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+ "event": "2026-08-26T02:52:00Z",
+ "event_note": "26 Aug 2026, 08:37 NPT (USGS signal time)",
+ "hazard": "debris",
+ "aoi_reason": "Bhotekoshi valley from the Rasuwagadhi confluence (OSM 28.2778N 85.3778E) south past Timure (28.2528N 85.3667E); scour visible in Sentinel-2 1 Oct 2026.",
+ "icp_hint": [
+  -600,
+  -2700
+ ],
+ "s2_pre": "S2B_45RUM_20251021_0_L2A",
+ "s2_post": "S2C_45RUM_20261001_0_L2A",
+ "s1_pre": null,
+ "s1_post": null,
+ "processing_version": "0.4.0",
+ "cems": {
+  "code": "EMSR927",
+  "aoi": 2,
+  "name": "Timure"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "sun": {
+  "s2_pre": {
+   "azimuth": 161.373146028726,
+   "elevation": 45.6516156636546,
+   "datetime": "2024-10-25T05:40:35.232000Z"
+  },
+  "s2_post": {
+   "azimuth": 153.376590610706,
+   "elevation": 55.0289184692964,
+   "datetime": "2025-09-27T05:40:50.001000Z"
+  }
+ },
+ "id": "dehradun",
+ "lat": 30.366,
+ "lon": 78.133,
+ "S": 6000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5.0,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+ "event": "2025-09-15T18:30:00Z",
+ "event_note": "night of 15-16 Sep 2025 (IST)",
+ "hazard": "debris",
+ "aoi_reason": "Covers Sahastradhara (Nominatim 30.3853N 78.1298E) and Maldevta (30.3442N 78.1238E) and the fresh debris channels visible in Sentinel-2 27 Sep 2025.",
+ "icp_hint": [
+  -1800,
+  -2300
+ ],
+ "s2_pre": "S2B_43RGP_20241025_0_L2A",
+ "s2_post": "S2A_43RGP_20250927_0_L2A",
+ "s1_pre": null,
+ "s1_post": null,
+ "processing_version": "0.4.0"
+}

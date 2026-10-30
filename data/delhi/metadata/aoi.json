@@ -1,0 +1,31 @@
+{
+ "sun": {
+  "s2_post": {
+   "azimuth": 150.841205260006,
+   "elevation": 44.9535774717128,
+   "datetime": "2026-02-17T05:40:59.325000Z"
+  }
+ },
+ "id": "delhi",
+ "lat": 28.67,
+ "lon": 77.278,
+ "S": 2000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5.0,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+ "event": null,
+ "event_note": "Hypothetical scenario",
+ "hazard": "quake",
+ "aoi_reason": "East Delhi between Seelampur (28.6707N 77.2644E) and Shahdara (28.6773N 77.2903E); unchanged from v3.",
+ "icp_hint": [
+  -700,
+  650
+ ],
+ "s2_pre": null,
+ "s2_post": "S2B_43RGM_20260217_1_L2A",
+ "s1_pre": null,
+ "s1_post": null,
+ "processing_version": "0.4.0"
+}

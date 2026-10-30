@@ -1,0 +1,197 @@
+{"t": "2026-10-25T13:35:31Z", "event": "build_start", "scenario": "dehradun", "only": ["dem", "landcover"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:35:34Z", "event": "manifest", "id": "dehradun.dem", "path": "dehradun/terrain/dem.f32", "bytes": 202500}
+{"t": "2026-10-25T13:35:34Z", "event": "manifest", "id": "dehradun.dem_context", "path": "dehradun/terrain/dem_context.f32", "bytes": 103684}
+{"t": "2026-10-25T13:35:38Z", "event": "manifest", "id": "dehradun.landcover", "path": "dehradun/landcover/worldcover.u8", "bytes": 50625}
+{"t": "2026-10-25T13:35:38Z", "event": "manifest", "id": "dehradun.landcover_context", "path": "dehradun/landcover/worldcover_context.u8", "bytes": 25921}
+{"t": "2026-10-25T13:35:38Z", "event": "build_done", "scenario": "dehradun", "seconds": 6.8}
+{"t": "2026-10-25T13:35:39Z", "event": "build_start", "scenario": "wayanad", "only": ["dem", "landcover"], "aoi": {"lat": 11.487, "lon": 76.15, "S": 6000}}
+{"t": "2026-10-25T13:35:41Z", "event": "manifest", "id": "wayanad.dem", "path": "wayanad/terrain/dem.f32", "bytes": 202500}
+{"t": "2026-10-25T13:35:41Z", "event": "manifest", "id": "wayanad.dem_context", "path": "wayanad/terrain/dem_context.f32", "bytes": 103684}
+{"t": "2026-10-25T13:35:43Z", "event": "manifest", "id": "wayanad.landcover", "path": "wayanad/landcover/worldcover.u8", "bytes": 50625}
+{"t": "2026-10-25T13:35:43Z", "event": "manifest", "id": "wayanad.landcover_context", "path": "wayanad/landcover/worldcover_context.u8", "bytes": 25921}
+{"t": "2026-10-25T13:35:43Z", "event": "build_done", "scenario": "wayanad", "seconds": 4.5}
+{"t": "2026-10-25T13:35:44Z", "event": "build_start", "scenario": "assam", "only": ["dem", "landcover"], "aoi": {"lat": 26.258, "lon": 91.828, "S": 6000}}
+{"t": "2026-10-25T13:35:46Z", "event": "manifest", "id": "assam.dem", "path": "assam/terrain/dem.f32", "bytes": 202500}
+{"t": "2026-10-25T13:35:46Z", "event": "manifest", "id": "assam.dem_context", "path": "assam/terrain/dem_context.f32", "bytes": 103684}
+{"t": "2026-10-25T13:35:48Z", "event": "manifest", "id": "assam.landcover", "path": "assam/landcover/worldcover.u8", "bytes": 50625}
+{"t": "2026-10-25T13:35:48Z", "event": "manifest", "id": "assam.landcover_context", "path": "assam/landcover/worldcover_context.u8", "bytes": 25921}
+{"t": "2026-10-25T13:35:48Z", "event": "build_done", "scenario": "assam", "seconds": 4.0}
+{"t": "2026-10-25T13:35:49Z", "event": "build_start", "scenario": "delhi", "only": ["dem", "landcover"], "aoi": {"lat": 28.67, "lon": 77.278, "S": 2000}}
+{"t": "2026-10-25T13:35:51Z", "event": "manifest", "id": "delhi.dem", "path": "delhi/terrain/dem.f32", "bytes": 202500}
+{"t": "2026-10-25T13:35:51Z", "event": "manifest", "id": "delhi.dem_context", "path": "delhi/terrain/dem_context.f32", "bytes": 103684}
+{"t": "2026-10-25T13:35:53Z", "event": "manifest", "id": "delhi.landcover", "path": "delhi/landcover/worldcover.u8", "bytes": 50625}
+{"t": "2026-10-25T13:35:53Z", "event": "manifest", "id": "delhi.landcover_context", "path": "delhi/landcover/worldcover_context.u8", "bytes": 25921}
+{"t": "2026-10-25T13:35:53Z", "event": "build_done", "scenario": "delhi", "seconds": 3.6}
+{"t": "2026-10-25T13:35:53Z", "event": "build_start", "scenario": "nepal", "only": ["dem", "landcover"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:35:55Z", "event": "manifest", "id": "nepal.dem", "path": "nepal/terrain/dem.f32", "bytes": 202500}
+{"t": "2026-10-25T13:35:55Z", "event": "manifest", "id": "nepal.dem_context", "path": "nepal/terrain/dem_context.f32", "bytes": 103684}
+{"t": "2026-10-25T13:35:57Z", "event": "manifest", "id": "nepal.landcover", "path": "nepal/landcover/worldcover.u8", "bytes": 50625}
+{"t": "2026-10-25T13:35:57Z", "event": "manifest", "id": "nepal.landcover_context", "path": "nepal/landcover/worldcover_context.u8", "bytes": 25921}
+{"t": "2026-10-25T13:35:57Z", "event": "build_done", "scenario": "nepal", "seconds": 3.8}
+{"t": "2026-10-25T13:36:10Z", "event": "build_start", "scenario": "dehradun", "only": ["osm", "buildings", "population", "imagery", "hazard"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:36:14Z", "event": "manifest", "id": "dehradun.imagery_s2_pre", "path": "dehradun/imagery/s2_pre.jpg", "bytes": 593198}
+{"t": "2026-10-25T13:36:16Z", "event": "manifest", "id": "dehradun.imagery_s2_post", "path": "dehradun/imagery/s2_post.jpg", "bytes": 536542}
+{"t": "2026-10-25T13:36:32Z", "event": "manifest", "id": "dehradun.imagery_context", "path": "dehradun/imagery/context.jpg", "bytes": 971710}
+{"t": "2026-10-25T13:36:35Z", "event": "manifest", "id": "dehradun.osm", "path": "dehradun/vectors/osm.json", "bytes": 339152}
+{"t": "2026-10-25T13:36:35Z", "event": "osm", "scenario": "dehradun", "roads": 450, "waterways": 7, "water": 3, "buildings": 26, "places": 25, "landuse": 16, "bridges": 23}
+{"t": "2026-10-25T13:36:40Z", "event": "manifest", "id": "dehradun.buildings_ml", "path": "dehradun/vectors/osm.json", "bytes": 997657}
+{"t": "2026-10-25T13:36:40Z", "event": "buildings", "scenario": "dehradun", "ml_candidates": 4246, "added": 4220, "osm": 26}
+{"t": "2026-10-25T13:36:40Z", "event": "manifest", "id": "dehradun.population_belief", "path": "dehradun/population/worldpop_belief.f32", "bytes": 6400}
+{"t": "2026-10-25T13:36:40Z", "event": "manifest", "id": "dehradun.population_grid", "path": "dehradun/population/worldpop_grid.f32", "bytes": 202500}
+{"t": "2026-10-25T13:36:40Z", "event": "population", "scenario": "dehradun", "belief_total": 13512.412109375, "grid_total": 13620.43359375, "direct": 13291.578125}
+{"t": "2026-10-25T13:36:48Z", "event": "manifest", "id": "dehradun.hazard_observed", "path": "dehradun/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:36:48Z", "event": "build_done", "scenario": "dehradun", "seconds": 37.9}
+{"t": "2026-10-25T13:36:48Z", "event": "build_start", "scenario": "nepal", "only": ["osm", "buildings", "population", "imagery", "hazard"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:36:53Z", "event": "manifest", "id": "nepal.imagery_s2_pre", "path": "nepal/imagery/s2_pre.jpg", "bytes": 587511}
+{"t": "2026-10-25T13:36:56Z", "event": "manifest", "id": "nepal.imagery_s2_post", "path": "nepal/imagery/s2_post.jpg", "bytes": 595099}
+{"t": "2026-10-25T13:37:03Z", "event": "manifest", "id": "nepal.imagery_context", "path": "nepal/imagery/context.jpg", "bytes": 944811}
+{"t": "2026-10-25T13:37:07Z", "event": "manifest", "id": "nepal.osm", "path": "nepal/vectors/osm.json", "bytes": 110478}
+{"t": "2026-10-25T13:37:07Z", "event": "osm", "scenario": "nepal", "roads": 15, "waterways": 67, "water": 6, "buildings": 108, "places": 4, "landuse": 5, "bridges": 0}
+{"t": "2026-10-25T13:37:13Z", "event": "manifest", "id": "nepal.buildings_ml", "path": "nepal/vectors/osm.json", "bytes": 179721}
+{"t": "2026-10-25T13:37:13Z", "event": "buildings", "scenario": "nepal", "ml_candidates": 454, "added": 433, "osm": 108}
+{"t": "2026-10-25T13:37:13Z", "event": "manifest", "id": "nepal.population_belief", "path": "nepal/population/worldpop_belief.f32", "bytes": 6400}
+{"t": "2026-10-25T13:37:13Z", "event": "manifest", "id": "nepal.population_grid", "path": "nepal/population/worldpop_grid.f32", "bytes": 202500}
+{"t": "2026-10-25T13:37:13Z", "event": "population", "scenario": "nepal", "belief_total": 1190.6199951171875, "grid_total": 1190.6199951171875, "direct": 1190.6199951171875}
+{"t": "2026-10-25T13:37:20Z", "event": "manifest", "id": "nepal.hazard_observed", "path": "nepal/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:37:21Z", "event": "build_done", "scenario": "nepal", "seconds": 32.2}
+{"t": "2026-10-25T13:37:21Z", "event": "build_start", "scenario": "assam", "only": ["osm", "buildings", "population", "imagery", "hazard"], "aoi": {"lat": 26.258, "lon": 91.828, "S": 6000}}
+{"t": "2026-10-25T13:37:25Z", "event": "s2_auto", "scenario": "assam", "window": "2022-01-01/2022-03-31", "chose": ["S2A_46RCQ_20220307_0_L2A", 0.999994682, {"valid": 1.0, "snow": 0.0, "water": 0.1015, "cloud_med": 0.0}]}
+{"t": "2026-10-25T13:37:28Z", "event": "manifest", "id": "assam.imagery_s2_pre", "path": "assam/imagery/s2_pre.jpg", "bytes": 506864}
+{"t": "2026-10-25T13:37:37Z", "event": "manifest", "id": "assam.imagery_context", "path": "assam/imagery/context.jpg", "bytes": 921034}
+{"t": "2026-10-25T13:37:40Z", "event": "manifest", "id": "assam.osm", "path": "assam/vectors/osm.json", "bytes": 205019}
+{"t": "2026-10-25T13:37:40Z", "event": "osm", "scenario": "assam", "roads": 188, "waterways": 5, "water": 1, "buildings": 14, "places": 1, "landuse": 11, "bridges": 8}
+{"t": "2026-10-25T13:37:53Z", "event": "manifest", "id": "assam.buildings_ml", "path": "assam/vectors/osm.json", "bytes": 205019}
+{"t": "2026-10-25T13:37:53Z", "event": "buildings", "scenario": "assam", "ml_candidates": 0, "added": 0, "osm": 14}
+{"t": "2026-10-25T13:37:53Z", "event": "manifest", "id": "assam.population_belief", "path": "assam/population/worldpop_belief.f32", "bytes": 6400}
+{"t": "2026-10-25T13:37:53Z", "event": "manifest", "id": "assam.population_grid", "path": "assam/population/worldpop_grid.f32", "bytes": 202500}
+{"t": "2026-10-25T13:37:53Z", "event": "population", "scenario": "assam", "belief_total": 31968.88671875, "grid_total": 32195.615234375, "direct": 32113.59765625}
+{"t": "2026-10-25T13:37:58Z", "event": "manifest", "id": "assam.hazard_observed", "path": "assam/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:37:58Z", "event": "build_done", "scenario": "assam", "seconds": 36.9}
+{"t": "2026-10-25T13:37:58Z", "event": "build_start", "scenario": "dehradun", "only": ["hazard"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:37:59Z", "event": "build_start", "scenario": "delhi", "only": ["osm", "buildings", "population", "imagery", "hazard"], "aoi": {"lat": 28.67, "lon": 77.278, "S": 2000}}
+{"t": "2026-10-25T13:38:07Z", "event": "manifest", "id": "dehradun.hazard_observed", "path": "dehradun/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:38:07Z", "event": "build_done", "scenario": "dehradun", "seconds": 8.2}
+{"t": "2026-10-25T13:38:07Z", "event": "build_start", "scenario": "nepal", "only": ["hazard"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:38:07Z", "event": "s2_auto", "scenario": "delhi", "window": "2025-10-01/2026-03-31", "chose": ["S2B_43RGM_20260217_1_L2A", 0.9999999, {"valid": 1.0, "snow": 0.0, "water": 0.0001}]}
+{"t": "2026-10-25T13:38:10Z", "event": "manifest", "id": "delhi.imagery_s2_post", "path": "delhi/imagery/s2_post.jpg", "bytes": 448719}
+{"t": "2026-10-25T13:38:16Z", "event": "manifest", "id": "nepal.hazard_observed", "path": "nepal/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:38:16Z", "event": "build_done", "scenario": "nepal", "seconds": 8.3}
+{"t": "2026-10-25T13:38:16Z", "event": "manifest", "id": "delhi.imagery_context", "path": "delhi/imagery/context.jpg", "bytes": 834595}
+{"t": "2026-10-25T13:38:19Z", "event": "manifest", "id": "delhi.osm", "path": "delhi/vectors/osm.json", "bytes": 378269}
+{"t": "2026-10-25T13:38:19Z", "event": "osm", "scenario": "delhi", "roads": 1423, "waterways": 5, "water": 8, "buildings": 579, "places": 5, "landuse": 26, "bridges": 54}
+{"t": "2026-10-25T13:38:27Z", "event": "build_start", "scenario": "dehradun", "only": ["hazard"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:38:34Z", "event": "manifest", "id": "dehradun.hazard_observed", "path": "dehradun/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:38:34Z", "event": "build_done", "scenario": "dehradun", "seconds": 7.2}
+{"t": "2026-10-25T13:38:35Z", "event": "build_start", "scenario": "nepal", "only": ["hazard"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:38:43Z", "event": "manifest", "id": "delhi.buildings_ml", "path": "delhi/vectors/osm.json", "bytes": 748008}
+{"t": "2026-10-25T13:38:43Z", "event": "buildings", "scenario": "delhi", "ml_candidates": 1725, "added": 1629, "osm": 579}
+{"t": "2026-10-25T13:38:43Z", "event": "manifest", "id": "delhi.population_belief", "path": "delhi/population/worldpop_belief.f32", "bytes": 6400}
+{"t": "2026-10-25T13:38:43Z", "event": "manifest", "id": "delhi.population_grid", "path": "delhi/population/worldpop_grid.f32", "bytes": 202500}
+{"t": "2026-10-25T13:38:43Z", "event": "population", "scenario": "delhi", "belief_total": 134058.875, "grid_total": 135203.875, "direct": 127446.296875}
+{"t": "2026-10-25T13:38:43Z", "event": "build_done", "scenario": "delhi", "seconds": 44.1}
+{"t": "2026-10-25T13:38:43Z", "event": "build_start", "scenario": "wayanad", "only": ["osm", "buildings", "population", "imagery", "hazard"], "aoi": {"lat": 11.487, "lon": 76.15, "S": 6000}}
+{"t": "2026-10-25T13:38:47Z", "event": "manifest", "id": "wayanad.imagery_s2_pre", "path": "wayanad/imagery/s2_pre.jpg", "bytes": 460965}
+{"t": "2026-10-25T13:38:50Z", "event": "manifest", "id": "wayanad.imagery_s2_post", "path": "wayanad/imagery/s2_post.jpg", "bytes": 463312}
+{"t": "2026-10-25T13:38:54Z", "event": "manifest", "id": "nepal.hazard_observed", "path": "nepal/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:38:54Z", "event": "build_done", "scenario": "nepal", "seconds": 19.0}
+{"t": "2026-10-25T13:39:04Z", "event": "manifest", "id": "wayanad.imagery_context", "path": "wayanad/imagery/context.jpg", "bytes": 663950}
+{"t": "2026-10-25T13:39:08Z", "event": "manifest", "id": "wayanad.osm", "path": "wayanad/vectors/osm.json", "bytes": 414798}
+{"t": "2026-10-25T13:39:08Z", "event": "osm", "scenario": "wayanad", "roads": 191, "waterways": 55, "water": 5, "buildings": 1757, "places": 10, "landuse": 6, "bridges": 5}
+{"t": "2026-10-25T13:39:09Z", "event": "build_start", "scenario": "dehradun", "only": ["hazard"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:39:16Z", "event": "manifest", "id": "dehradun.hazard_observed", "path": "dehradun/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:39:16Z", "event": "build_done", "scenario": "dehradun", "seconds": 7.1}
+{"t": "2026-10-25T13:39:16Z", "event": "build_start", "scenario": "nepal", "only": ["hazard"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:39:24Z", "event": "manifest", "id": "nepal.hazard_observed", "path": "nepal/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:39:24Z", "event": "build_done", "scenario": "nepal", "seconds": 7.7}
+{"t": "2026-10-25T13:39:28Z", "event": "manifest", "id": "wayanad.buildings_ml", "path": "wayanad/vectors/osm.json", "bytes": 545568}
+{"t": "2026-10-25T13:39:28Z", "event": "buildings", "scenario": "wayanad", "ml_candidates": 2179, "added": 923, "osm": 1757}
+{"t": "2026-10-25T13:39:28Z", "event": "manifest", "id": "wayanad.population_belief", "path": "wayanad/population/worldpop_belief.f32", "bytes": 6400}
+{"t": "2026-10-25T13:39:28Z", "event": "manifest", "id": "wayanad.population_grid", "path": "wayanad/population/worldpop_grid.f32", "bytes": 202500}
+{"t": "2026-10-25T13:39:28Z", "event": "population", "scenario": "wayanad", "belief_total": 1134.731201171875, "grid_total": 1134.7310791015625, "direct": 1134.7310791015625}
+{"t": "2026-10-25T13:39:35Z", "event": "manifest", "id": "wayanad.hazard_observed", "path": "wayanad/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:39:35Z", "event": "build_done", "scenario": "wayanad", "seconds": 51.7}
+{"t": "2026-10-25T13:40:26Z", "event": "build_start", "scenario": "nepal", "only": ["buildings"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T13:40:33Z", "event": "manifest", "id": "nepal.buildings_ml", "path": "nepal/vectors/osm.json", "bytes": 196577}
+{"t": "2026-10-25T13:40:33Z", "event": "buildings", "scenario": "nepal", "ml_candidates": 597, "added": 578, "osm": 108}
+{"t": "2026-10-25T13:40:33Z", "event": "build_done", "scenario": "nepal", "seconds": 6.9}
+{"t": "2026-10-25T13:40:34Z", "event": "build_start", "scenario": "dehradun", "only": ["buildings"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T13:40:43Z", "event": "build_start", "scenario": "wayanad", "only": ["hazard"], "aoi": {"lat": 11.487, "lon": 76.15, "S": 6000}}
+{"t": "2026-10-25T13:40:44Z", "event": "manifest", "id": "dehradun.buildings_ml", "path": "dehradun/vectors/osm.json", "bytes": 1375057}
+{"t": "2026-10-25T13:40:44Z", "event": "buildings", "scenario": "dehradun", "ml_candidates": 6832, "added": 6791, "osm": 26}
+{"t": "2026-10-25T13:40:44Z", "event": "build_done", "scenario": "dehradun", "seconds": 9.7}
+{"t": "2026-10-25T13:40:44Z", "event": "build_start", "scenario": "assam", "only": ["buildings"], "aoi": {"lat": 26.258, "lon": 91.828, "S": 6000}}
+{"t": "2026-10-25T13:40:51Z", "event": "manifest", "id": "wayanad.hazard_observed", "path": "wayanad/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:40:51Z", "event": "build_done", "scenario": "wayanad", "seconds": 8.0}
+{"t": "2026-10-25T13:41:00Z", "event": "manifest", "id": "assam.buildings_ml", "path": "assam/vectors/osm.json", "bytes": 1218101}
+{"t": "2026-10-25T13:41:00Z", "event": "buildings", "scenario": "assam", "ml_candidates": 6896, "added": 6866, "osm": 14}
+{"t": "2026-10-25T13:41:00Z", "event": "build_done", "scenario": "assam", "seconds": 15.7}
+{"t": "2026-10-25T13:41:01Z", "event": "build_start", "scenario": "wayanad", "only": ["buildings"], "aoi": {"lat": 11.487, "lon": 76.15, "S": 6000}}
+{"t": "2026-10-25T13:41:01Z", "event": "manifest", "id": "wayanad.buildings_ml", "path": "wayanad/vectors/osm.json", "bytes": 508972}
+{"t": "2026-10-25T13:41:01Z", "event": "buildings", "scenario": "wayanad", "ml_candidates": 1761, "added": 662, "osm": 1757}
+{"t": "2026-10-25T13:41:01Z", "event": "build_done", "scenario": "wayanad", "seconds": 0.3}
+{"t": "2026-10-25T13:41:01Z", "event": "build_start", "scenario": "delhi", "only": ["buildings"], "aoi": {"lat": 28.67, "lon": 77.278, "S": 2000}}
+{"t": "2026-10-25T13:41:12Z", "event": "build_start", "scenario": "assam", "only": ["hazard"], "aoi": {"lat": 26.258, "lon": 91.828, "S": 6000}}
+{"t": "2026-10-25T13:41:18Z", "event": "manifest", "id": "assam.jrc_water_occurrence", "path": "assam/hazard/jrc_occurrence.u8", "bytes": 50625}
+{"t": "2026-10-25T13:41:18Z", "event": "manifest", "id": "assam.hazard_observed", "path": "assam/hazard/observed_mask.u8", "bytes": 50625}
+{"t": "2026-10-25T13:41:18Z", "event": "build_done", "scenario": "assam", "seconds": 6.7}
+{"t": "2026-10-25T13:41:55Z", "event": "manifest", "id": "delhi.buildings_ml", "path": "delhi/vectors/osm.json", "bytes": 2670587}
+{"t": "2026-10-25T13:41:55Z", "event": "buildings", "scenario": "delhi", "ml_candidates": 16210, "added": 15743, "osm": 579}
+{"t": "2026-10-25T13:41:55Z", "event": "build_done", "scenario": "delhi", "seconds": 53.5}
+{"t": "2026-10-25T13:49:19Z", "event": "sun", "scenario": "dehradun", "s2_pre": [161.373146028726, 45.6516156636546], "s2_post": [153.376590610706, 55.0289184692964]}
+{"t": "2026-10-25T13:49:20Z", "event": "sun", "scenario": "wayanad", "s2_pre": [139.660326409869, 54.3654113761748], "s2_post": [152.382597621738, 50.9294620888338]}
+{"t": "2026-10-25T13:49:32Z", "event": "sun", "scenario": "assam", "s2_pre": [144.552653851581, 52.2050075951214]}
+{"t": "2026-10-25T13:49:36Z", "event": "manifest", "id": "assam.imagery_s1_pre_vv", "path": "assam/imagery/s1_pre_vv.jpg", "bytes": 482172}
+{"t": "2026-10-25T13:49:38Z", "event": "manifest", "id": "assam.imagery_s1_post_vv", "path": "assam/imagery/s1_post_vv.jpg", "bytes": 510715}
+{"t": "2026-10-25T13:49:39Z", "event": "sun", "scenario": "delhi", "s2_post": [150.841205260006, 44.9535774717128]}
+{"t": "2026-10-25T13:49:40Z", "event": "sun", "scenario": "nepal", "s2_pre": [160.493049881485, 48.8416690999687], "s2_post": [154.336128380969, 55.5576755979422]}
+{"t": "2026-10-25T14:20:26Z", "event": "build_start", "scenario": "dehradun", "only": ["osm", "buildings"], "aoi": {"lat": 30.366, "lon": 78.133, "S": 6000}}
+{"t": "2026-10-25T14:20:26Z", "event": "manifest", "id": "dehradun.osm", "path": "dehradun/vectors/osm.json", "bytes": 339297}
+{"t": "2026-10-25T14:20:26Z", "event": "osm", "scenario": "dehradun", "roads": 450, "waterways": 7, "water": 3, "buildings": 26, "places": 25, "landuse": 16, "bridges": 23}
+{"t": "2026-10-25T14:20:27Z", "event": "manifest", "id": "dehradun.buildings_ml", "path": "dehradun/vectors/osm.json", "bytes": 1375202}
+{"t": "2026-10-25T14:20:27Z", "event": "buildings", "scenario": "dehradun", "ml_candidates": 6832, "added": 6791, "osm": 26}
+{"t": "2026-10-25T14:20:27Z", "event": "build_done", "scenario": "dehradun", "seconds": 1.0}
+{"t": "2026-10-25T14:20:28Z", "event": "build_start", "scenario": "wayanad", "only": ["osm", "buildings"], "aoi": {"lat": 11.487, "lon": 76.15, "S": 6000}}
+{"t": "2026-10-25T14:20:28Z", "event": "manifest", "id": "wayanad.osm", "path": "wayanad/vectors/osm.json", "bytes": 416319}
+{"t": "2026-10-25T14:20:28Z", "event": "osm", "scenario": "wayanad", "roads": 191, "waterways": 55, "water": 5, "buildings": 1757, "places": 10, "landuse": 6, "bridges": 5}
+{"t": "2026-10-25T14:20:28Z", "event": "manifest", "id": "wayanad.buildings_ml", "path": "wayanad/vectors/osm.json", "bytes": 510493}
+{"t": "2026-10-25T14:20:28Z", "event": "buildings", "scenario": "wayanad", "ml_candidates": 1761, "added": 662, "osm": 1757}
+{"t": "2026-10-25T14:20:28Z", "event": "build_done", "scenario": "wayanad", "seconds": 0.6}
+{"t": "2026-10-25T14:20:29Z", "event": "build_start", "scenario": "assam", "only": ["osm", "buildings"], "aoi": {"lat": 26.258, "lon": 91.828, "S": 6000}}
+{"t": "2026-10-25T14:20:29Z", "event": "manifest", "id": "assam.osm", "path": "assam/vectors/osm.json", "bytes": 205126}
+{"t": "2026-10-25T14:20:29Z", "event": "osm", "scenario": "assam", "roads": 188, "waterways": 5, "water": 1, "buildings": 14, "places": 1, "landuse": 11, "bridges": 8}
+{"t": "2026-10-25T14:20:30Z", "event": "manifest", "id": "assam.buildings_ml", "path": "assam/vectors/osm.json", "bytes": 1218208}
+{"t": "2026-10-25T14:20:30Z", "event": "buildings", "scenario": "assam", "ml_candidates": 6896, "added": 6866, "osm": 14}
+{"t": "2026-10-25T14:20:30Z", "event": "build_done", "scenario": "assam", "seconds": 1.0}
+{"t": "2026-10-25T14:20:31Z", "event": "build_start", "scenario": "delhi", "only": ["osm", "buildings"], "aoi": {"lat": 28.67, "lon": 77.278, "S": 2000}}
+{"t": "2026-10-25T14:20:31Z", "event": "manifest", "id": "delhi.osm", "path": "delhi/vectors/osm.json", "bytes": 378349}
+{"t": "2026-10-25T14:20:31Z", "event": "osm", "scenario": "delhi", "roads": 1423, "waterways": 5, "water": 8, "buildings": 579, "places": 5, "landuse": 26, "bridges": 54}
+{"t": "2026-10-25T14:20:33Z", "event": "manifest", "id": "delhi.buildings_ml", "path": "delhi/vectors/osm.json", "bytes": 2670667}
+{"t": "2026-10-25T14:20:33Z", "event": "buildings", "scenario": "delhi", "ml_candidates": 16210, "added": 15743, "osm": 579}
+{"t": "2026-10-25T14:20:33Z", "event": "build_done", "scenario": "delhi", "seconds": 2.0}
+{"t": "2026-10-25T14:20:33Z", "event": "build_start", "scenario": "nepal", "only": ["osm", "buildings"], "aoi": {"lat": 28.265, "lon": 85.372, "S": 6000}}
+{"t": "2026-10-25T14:20:34Z", "event": "manifest", "id": "nepal.osm", "path": "nepal/vectors/osm.json", "bytes": 111650}
+{"t": "2026-10-25T14:20:34Z", "event": "osm", "scenario": "nepal", "roads": 15, "waterways": 67, "water": 6, "buildings": 108, "places": 4, "landuse": 5, "bridges": 0}
+{"t": "2026-10-25T14:20:34Z", "event": "manifest", "id": "nepal.buildings_ml", "path": "nepal/vectors/osm.json", "bytes": 197749}
+{"t": "2026-10-25T14:20:34Z", "event": "buildings", "scenario": "nepal", "ml_candidates": 597, "added": 578, "osm": 108}
+{"t": "2026-10-25T14:20:34Z", "event": "build_done", "scenario": "nepal", "seconds": 0.4}
+{"t": "2026-10-25T14:48:43Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_none", "scenario": "dehradun", "note": "no CEMS rapid-mapping AOI overlaps this scenario (list covers 2023-2026)"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_none", "scenario": "wayanad", "note": "no CEMS rapid-mapping AOI overlaps this scenario (list covers 2023-2026)"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_none", "scenario": "assam", "note": "no CEMS rapid-mapping AOI overlaps this scenario (list covers 2023-2026)"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_none", "scenario": "delhi", "note": "no CEMS rapid-mapping AOI overlaps this scenario (list covers 2023-2026)"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_list", "count": 268, "sha256": "c4562f854cec7dafd3ff33bf042a6be4aa0e91c4414196590ba69117f2c2f548"}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 1, "name": "Syapru Besi", "overlap_km2": 0.0}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 2, "name": "Timure", "overlap_km2": 2.97}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 3, "name": "Bidur", "overlap_km2": 0.0}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 4, "name": "Bharatpur", "overlap_km2": 0.0}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 5, "name": "Phosretar", "overlap_km2": 0.0}
+{"t": "2026-10-25T14:48:49Z", "event": "cems_aoi", "scenario": "nepal", "code": "EMSR927", "aoi": 6, "name": "Kyundi", "overlap_km2": 0.0}
+{"t": "2026-10-25T14:48:51Z", "event": "cems_product", "scenario": "nepal", "url": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR927/AOI02/GRA_PRODUCT/EMSR927_AOI02_GRA_PRODUCT_v2.zip", "sha256": "1f57ba3370597055b1372e26771923fdebc9870a52a8d3435c847cdf0a0b8db8", "bytes": 6910842}
+{"t": "2026-10-25T14:48:51Z", "event": "manifest", "id": "nepal.hazard_cems", "path": "nepal/hazard/cems_event.u8", "bytes": 50625}
+{"t": "2026-10-25T14:48:51Z", "event": "manifest", "id": "nepal.cems_vectors", "path": "nepal/vectors/cems.json", "bytes": 102603}
+{"t": "2026-10-25T15:51:41Z", "event": "manifest", "id": "assam.hazard_water_pre", "path": "assam/hazard/water_pre.u8", "bytes": 50625}
+{"t": "2026-10-25T15:51:41Z", "event": "manifest", "id": "assam.hazard_water_post", "path": "assam/hazard/water_post.u8", "bytes": 50625}
