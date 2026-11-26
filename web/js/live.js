@@ -351,6 +351,8 @@ function planPre(sc, pIn, built, ctx = {}) {
   out.nodes = nodes;
   const fleetN = nodes.length, crew = fleetN * F.crewPerModule, opsH = 24;
   out.steps.deploy = { relays: relays.length, con, linked: con.ok.filter(Boolean).length, curve, logistics: { modules: fleetN, crew, heliumM3: fleetN * F.heliumM3, costINR: fleetN * F.costPerModuleINR + fleetN * F.costPerHourINR * opsH, opsHours: opsH, assumptions: true }, imaging: ctx.imaging || null, airspace: out.airspace || null };
+  /* Display only: the Results page and inspectors read the full site x cell table (v7 shape). Weather / per-height runs keep only the sparse lists, so rebuild the table from them. Planning above is unaffected. */
+  if (out.cc && !out.cc.cov && out.cc.sp) { const N = B.N, S = out.cc.sp, cov = new Uint8Array(S.length * N), pd = new Float32Array(S.length * N); S.forEach((l, j) => { for (let t = 0; t < l.c.length; t++) { cov[j * N + l.c[t]] = 1; pd[j * N + l.c[t]] = l.p ? l.p[t] : 1; } }); out.cc = Object.assign({}, out.cc, { cov, pd, dense: true }); }
   out.ms = Math.round((typeof performance !== 'undefined' ? performance : Date).now() - t0);
   return out;
 }
