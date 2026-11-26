@@ -4,7 +4,7 @@
 (function (A) {
 'use strict';
 const C = A.core, { CLS, clamp, mulberry32, gauss } = C;
-const PK = A.pack = { base: 'data/', manifest: null, cache: {} };
+const PK = A.pack = { base: /\/web(\/|\/index\.html)?$/.test(location.pathname) ? '../data/packs/' : 'data/', manifest: null, cache: {} }; /* v8: GitHub Pages serves the repo, where the console is in web/ and data in data/packs/ */
 
 async function getJSON(u) { const r = await fetch(u); if (!r.ok) throw new Error(u + ' → HTTP ' + r.status); return r.json(); }
 // rasters are loaded from base64 text twins (<file>.b64.txt, written by data/tools/encode_b64.py) because the artifact host serves only standard web types
