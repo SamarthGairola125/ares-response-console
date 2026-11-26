@@ -1,0 +1,21 @@
+{
+  "name": "ares-planner",
+  "version": "8.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "test": "node tests/regression.mjs && node tests/feeds.mjs",
+    "ablation": "node tests/ablation.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "geotiff": "^2.1.3",
+    "h3-js": "^4.5.0",
+    "leaflet": "^1.9.4",
+    "pngjs": "^7.0.0"
+  },
+  "type": "module"
+}

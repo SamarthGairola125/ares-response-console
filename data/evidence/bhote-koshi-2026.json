@@ -1,0 +1,148 @@
+{
+ "event": "Bhote Koshi outburst flood, 26 Aug 2026",
+ "scenario": "nepal",
+ "license": "CC BY-NC 4.0 (GeoPera reconstruction / evidence records as packaged by gods-eye-view, MIT app code)",
+ "sources": [
+  "https://github.com/bilawalsidhu/gods-eye-view (public/events/bhote-koshi-2026/event.json)",
+  "https://github.com/geo-pera/bhotekoshi-2026-reconstruction"
+ ],
+ "caveat": "Geolocated evidence of where the flood was seen or did damage, not survivor locations. Non-commercial use only.",
+ "points": [
+  {
+   "id": "immediate-collapse-viewpoint",
+   "seq": 1,
+   "title": "Immediate collapse viewpoint",
+   "phase": "initiation",
+   "lat": 28.3632333,
+   "lon": 85.4423639
+  },
+  {
+   "id": "debris-dammed-lake",
+   "seq": 2,
+   "title": "Debris-dammed lake",
+   "phase": "damming",
+   "lat": 28.3346111,
+   "lon": 85.4861389
+  },
+  {
+   "id": "second-landslide",
+   "seq": 3,
+   "title": "Second landslide",
+   "phase": "secondary failure",
+   "lat": 28.3379706,
+   "lon": 85.4688823
+  },
+  {
+   "id": "gyirong-border-gate",
+   "seq": 4,
+   "title": "Gyirong border gate",
+   "phase": "border arrival",
+   "lat": 28.2808338,
+   "lon": 85.3780248
+  },
+  {
+   "id": "timure-cluster",
+   "seq": 5,
+   "title": "Timure evidence cluster",
+   "phase": "propagation",
+   "lat": 28.2519361,
+   "lon": 85.3665833
+  },
+  {
+   "id": "syabru-besi",
+   "seq": 6,
+   "title": "Syabru Besi",
+   "phase": "downstream passage",
+   "lat": 28.1602583333333,
+   "lon": 85.3325666666667
+  },
+  {
+   "id": "dhunche",
+   "seq": 7,
+   "title": "Dhunche",
+   "phase": "downstream passage",
+   "lat": 28.1131861111111,
+   "lon": 85.2953305555556
+  },
+  {
+   "id": "mailung-upper-trishuli",
+   "seq": 8,
+   "title": "Mailung / Upper Trishuli bridge",
+   "phase": "downstream passage",
+   "lat": 28.090925,
+   "lon": 85.2322916666667
+  },
+  {
+   "id": "mailung-bazzar",
+   "seq": 9,
+   "title": "Mailung Bazzar, Dandaguan",
+   "phase": "downstream passage",
+   "lat": 28.0761666666667,
+   "lon": 85.2125277777778
+  },
+  {
+   "id": "dandagaun",
+   "seq": 10,
+   "title": "Dandagaun, Rasuwa",
+   "phase": "downstream passage",
+   "lat": 28.0751944444444,
+   "lon": 85.2076944444444
+  },
+  {
+   "id": "dandagaun-viewpoint",
+   "seq": 11,
+   "title": "Dandagaun viewpoint restaurant",
+   "phase": "downstream passage",
+   "lat": 28.0354,
+   "lon": 85.1894361111111
+  },
+  {
+   "id": "betrawati-bazaar",
+   "seq": 12,
+   "title": "Betrawati Bazaar",
+   "phase": "downstream consequence",
+   "lat": 27.9758992572246,
+   "lon": 85.1835331689033
+  },
+  {
+   "id": "bhainse",
+   "seq": 13,
+   "title": "Bhainse",
+   "phase": "downstream consequence",
+   "lat": 27.9623111111111,
+   "lon": 85.1739777777778
+  },
+  {
+   "id": "bidur-trishuli-bridge",
+   "seq": 14,
+   "title": "Bidur - Trishuli bridge",
+   "phase": "consequence",
+   "lat": 27.920858,
+   "lon": 85.148029
+  },
+  {
+   "id": "devighat-taadi-khola-bridge",
+   "seq": 15,
+   "title": "Devighat / Taadi Khola Bridge",
+   "phase": "downstream consequence",
+   "lat": 27.8585278,
+   "lon": 85.1090318
+  },
+  {
+   "id": "charaudi",
+   "seq": 16,
+   "title": "Charaudi",
+   "phase": "downstream consequence",
+   "lat": 27.8032944444444,
+   "lon": 84.749375
+  },
+  {
+   "id": "rasuwagadhi-geoconfirmed",
+   "seq": 0,
+   "title": "RASUWAGADHI \u00b7 SOURCE GEOCONFIRMED",
+   "phase": "witness",
+   "lat": 28.279942,
+   "lon": 85.377725
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "dehradun": {
+  "demMeanAbsDiffM": 2.8,
+  "worldcoverAgree": 0.9625,
+  "worldpop": 13512,
+  "hrsl": 22251,
+  "cosineSimilarity": 0.556,
+  "s": 3.729
+ },
+ "nepal": {
+  "demMeanAbsDiffM": 6.55,
+  "worldcoverAgree": 0.9625,
+  "worldpop": 1191,
+  "hrsl": 523,
+  "cosineSimilarity": 0.425,
+  "s": 1.525
+ },
+ "wayanad": {
+  "demMeanAbsDiffM": 5.29,
+  "worldcoverAgree": 0.9767,
+  "worldpop": 1135,
+  "hrsl": 4135,
+  "cosineSimilarity": 0.351,
+  "s": 1.394
+ },
+ "assam": {
+  "demMeanAbsDiffM": 0.39,
+  "worldcoverAgree": 0.9494,
+  "worldpop": 31969,
+  "hrsl": 10977,
+  "cosineSimilarity": 0.477,
+  "s": 1.774
+ },
+ "delhi": {
+  "demMeanAbsDiffM": 0.6,
+  "worldcoverAgree": 0.9875,
+  "worldpop": 134059,
+  "hrsl": 178887,
+  "cosineSimilarity": 0.674,
+  "s": 1.377
+ }
+}
