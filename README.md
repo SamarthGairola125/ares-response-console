@@ -17,6 +17,12 @@ It reuses the architecture of [gods-eye-view](https://github.com/bilawalsidhu/go
 
 All of it is rebuilt around the ARES model and Indian data sources.
 
+## View it online (no install)
+
+The console is published with GitHub Pages: **https://samarthgairola125.github.io/ares-response-console/**
+
+It runs entirely in the browser on the saved inputs for each event date. Live mode, aircraft, radar and the Analyst need the local server (below). Every push to `main` republishes the site through `.github/workflows/pages.yml`.
+
 ## Run it
 
 Requirements: Node 20 or newer (22 or 24 recommended) and an internet connection.
