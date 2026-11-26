@@ -1,0 +1,19 @@
+{
+  "_note": "Planning assumptions. Replace with your hardware's real numbers. Units: m, m/s, minutes, INR.",
+  "heights": [100, 150, 200, 300, 400],
+  "maxTether": 400,
+  "vOpMax": 15,
+  "vGustMax": 20,
+  "blowRefDeg": 30,
+  "blowRefV": 15,
+  "shearAlpha": 0.16,
+  "setupMin": 25,
+  "slowdown": 1.3,
+  "crewPerModule": 3,
+  "heliumM3": 35,
+  "costPerModuleINR": 18000,
+  "costPerHourINR": 1500,
+  "fairFloor": 0.5,
+  "holdShare": 0.8,
+  "airportR": { "large_airport": 5000, "medium_airport": 5000, "small_airport": 3000, "heliport": 1000, "seaplane_base": 1000, "balloonport": 1000, "closed": 0 }
+}

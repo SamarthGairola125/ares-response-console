@@ -1,0 +1,31 @@
+{
+ "sun": {
+  "s2_pre": {
+   "azimuth": 144.552653851581,
+   "elevation": 52.2050075951214,
+   "datetime": "2022-03-07T04:41:14.971000Z"
+  }
+ },
+ "id": "assam",
+ "lat": 26.258,
+ "lon": 91.828,
+ "S": 6000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5.0,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+ "event": "2022-06-16T00:00:00Z",
+ "event_note": "June 2022 monsoon flood; exact breach date not verified",
+ "hazard": "flood",
+ "aoi_reason": "Kurua village (OSM node, 26.2376N 91.8206E, Sipajhar, Darrang) on the Brahmaputra north bank, where the Rangamati-Kuruwa bund breach was reported; flooded floodplain north of it visible in Sentinel-1 30 Jun 2022. Breach point itself is not mapped in OSM (approximate).",
+ "icp_hint": [
+  1500,
+  2500
+ ],
+ "s2_pre": "S2A_46RCQ_20220307_0_L2A",
+ "s2_post": null,
+ "s1_pre": "S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_rtc",
+ "s1_post": "S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_rtc",
+ "processing_version": "0.4.0"
+}

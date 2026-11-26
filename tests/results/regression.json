@@ -1,0 +1,42 @@
+{
+ "v7spot": [
+  20,
+  20
+ ],
+ "stages1to8": [
+  95,
+  95
+ ],
+ "rows": [
+  {
+   "id": "dehradun",
+   "placed": 9,
+   "cov": 0.9578,
+   "ms": 103
+  },
+  {
+   "id": "wayanad",
+   "placed": 1,
+   "cov": 0.9891,
+   "ms": 117
+  },
+  {
+   "id": "assam",
+   "placed": 26,
+   "cov": 0.8181,
+   "ms": 101
+  },
+  {
+   "id": "delhi",
+   "placed": 6,
+   "cov": 0.9047,
+   "ms": 228
+  },
+  {
+   "id": "nepal",
+   "placed": 3,
+   "cov": 0.9802,
+   "ms": 61
+  }
+ ]
+}

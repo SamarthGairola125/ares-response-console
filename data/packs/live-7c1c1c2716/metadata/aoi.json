@@ -1,0 +1,44 @@
+{
+ "id": "live-7c1c1c2716",
+ "lat": 30.555,
+ "lon": 79.564,
+ "S": 6000,
+ "G": 225,
+ "ctx_n": 161,
+ "ctx_f": 5,
+ "belief": 40,
+ "crs": "+proj=aeqd +lat_0=30.555 +lon_0=79.564 +datum=WGS84 +units=m +no_defs",
+ "event": "2026-11-25T12:30:00Z",
+ "hazard": "debris",
+ "hazardSource": "MODELLED prior from terrain (height above nearest drainage) — replace with an observed map when available",
+ "icp_hint": [
+  0,
+  -2280
+ ],
+ "processing_version": "v8-live-0.1",
+ "built": "2026-11-25T13:07:01.917Z",
+ "provenance": [
+  {
+   "layer": "dem",
+   "source": "Copernicus DEM GLO-30"
+  },
+  {
+   "layer": "landcover",
+   "source": "ESA WorldCover 2021 v200"
+  },
+  {
+   "layer": "population",
+   "source": "Meta/CIESIN HRSL v1.5 (general population)",
+   "total": 10358
+  },
+  {
+   "layer": "osm",
+   "source": "OpenStreetMap (unreachable: overpass-api.de: overpass: HTTP 503; overpass.kumi.systems: overpass: This operation was aborted; maps.mail.ru: overpass: HTTP 504; overpass.private.coffee: overpass: This operation was aborted)",
+   "counts": {
+    "roads": 0,
+    "buildings": 0,
+    "places": 0
+   }
+  }
+ ]
+}

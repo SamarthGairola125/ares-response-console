@@ -1,0 +1,97 @@
+[
+ {
+  "id": "dehradun",
+  "ok": true,
+  "pre": 24,
+  "all": 27,
+  "cov": 0.849,
+  "shareHours": 0.72,
+  "lastUp": 455,
+  "roads": 12,
+  "cut": 12,
+  "heights": "300/200/100",
+  "gnss": {
+   "jamShare": 0,
+   "kpMax": 4.333,
+   "driftAdded": 0
+  },
+  "ms": 1186,
+  "hrsl": true
+ },
+ {
+  "id": "wayanad",
+  "ok": true,
+  "pre": 2,
+  "all": 5,
+  "cov": 0.951,
+  "shareHours": 1,
+  "lastUp": 33,
+  "roads": 2,
+  "cut": 0,
+  "heights": "300/200",
+  "gnss": {
+   "jamShare": 0.006557377049180328,
+   "kpMax": 5.333,
+   "driftAdded": 5
+  },
+  "ms": 1141,
+  "hrsl": true
+ },
+ {
+  "id": "assam",
+  "ok": true,
+  "pre": 26,
+  "all": 29,
+  "cov": 0.508,
+  "shareHours": 0,
+  "lastUp": 672,
+  "roads": 11,
+  "cut": 15,
+  "heights": "200/300/150",
+  "gnss": {
+   "jamShare": 0,
+   "kpMax": 3.667,
+   "driftAdded": 0
+  },
+  "ms": 2349,
+  "hrsl": true
+ },
+ {
+  "id": "delhi",
+  "ok": true,
+  "pre": 9,
+  "all": 10,
+  "cov": 0.913,
+  "shareHours": 1,
+  "lastUp": 152,
+  "roads": 9,
+  "cut": 0,
+  "heights": "300",
+  "gnss": {
+   "jamShare": 0.0063875088715401,
+   "kpMax": 3,
+   "driftAdded": 0
+  },
+  "ms": 4496,
+  "hrsl": true
+ },
+ {
+  "id": "nepal",
+  "ok": true,
+  "pre": 3,
+  "all": 6,
+  "cov": 0.97,
+  "shareHours": 1,
+  "lastUp": 133,
+  "roads": 3,
+  "cut": 0,
+  "heights": "150/200",
+  "gnss": {
+   "jamShare": 0,
+   "kpMax": 0.667,
+   "driftAdded": 0
+  },
+  "ms": 773,
+  "hrsl": true
+ }
+]

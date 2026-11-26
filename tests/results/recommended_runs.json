@@ -1,0 +1,249 @@
+[
+ {
+  "id": "dehradun",
+  "modules": 24,
+  "cov": 0.8491021398995487,
+  "met": false,
+  "share": 0.72,
+  "modulesFor": {
+   "50%": 16,
+   "80%": null,
+   "90%": null,
+   "100%": null
+  },
+  "lastUp": 455,
+  "trigger": null,
+  "nextRadarH": 18.3,
+  "nextRadarActualErrH": 36,
+  "nextOptH": 35.2,
+  "nextOptErrH": 72,
+  "routesCut": 12,
+  "routes": 24,
+  "airspace": [
+   "Sahastradhara Heliport 3.5 km"
+  ],
+  "heights": [
+   300,
+   300,
+   200,
+   300,
+   200,
+   200,
+   200,
+   200,
+   300,
+   300,
+   300,
+   200,
+   200,
+   200,
+   200,
+   200,
+   300,
+   200,
+   100,
+   200,
+   100,
+   300,
+   100,
+   200
+  ],
+  "weather": {
+   "src": "ERA5 reanalysis (Open-Meteo archive)",
+   "v50": 1.73,
+   "v90": 2.0260000000000002,
+   "cb50": 1500,
+   "hold": 0
+  },
+  "evidence": null
+ },
+ {
+  "id": "wayanad",
+  "modules": 2,
+  "cov": 0.9505590699094131,
+  "met": true,
+  "share": 1,
+  "modulesFor": {
+   "50%": 2,
+   "80%": 2,
+   "90%": 2,
+   "100%": 2
+  },
+  "lastUp": 33,
+  "trigger": null,
+  "nextRadarH": 51.9,
+  "nextRadarActualErrH": 0,
+  "nextOptH": 104.8,
+  "nextOptErrH": 0,
+  "routesCut": 0,
+  "routes": 2,
+  "airspace": [],
+  "heights": [
+   300,
+   200
+  ],
+  "weather": {
+   "src": "ERA5 reanalysis (Open-Meteo archive)",
+   "v50": 2.97,
+   "v90": 3.806,
+   "cb50": null,
+   "hold": 0
+  },
+  "evidence": null
+ },
+ {
+  "id": "assam",
+  "modules": 26,
+  "cov": 0.5078473237860605,
+  "met": false,
+  "share": 0,
+  "modulesFor": {
+   "50%": null,
+   "80%": null,
+   "90%": null,
+   "100%": null
+  },
+  "lastUp": 672,
+  "trigger": null,
+  "nextRadarH": 12,
+  "nextRadarActualErrH": 0,
+  "nextOptH": 100.7,
+  "nextOptErrH": 0,
+  "routesCut": 15,
+  "routes": 26,
+  "airspace": [],
+  "heights": [
+   200,
+   300,
+   300,
+   300,
+   200,
+   300,
+   150,
+   200,
+   200,
+   300,
+   200,
+   200,
+   200,
+   200,
+   200,
+   200,
+   200,
+   300,
+   200,
+   200,
+   200,
+   200,
+   200,
+   200,
+   200,
+   200
+  ],
+  "weather": {
+   "src": "ERA5 reanalysis (Open-Meteo archive)",
+   "v50": 3.62,
+   "v90": 6.11,
+   "cb50": null,
+   "hold": 0
+  },
+  "evidence": null
+ },
+ {
+  "id": "delhi",
+  "modules": 9,
+  "cov": 0.9129570646080837,
+  "met": true,
+  "share": 1,
+  "modulesFor": {
+   "50%": 8,
+   "80%": 8,
+   "90%": 8,
+   "100%": 8
+  },
+  "lastUp": 152,
+  "trigger": null,
+  "nextRadarH": null,
+  "nextRadarActualErrH": null,
+  "nextOptH": 86.2,
+  "nextOptErrH": null,
+  "routesCut": 0,
+  "routes": 9,
+  "airspace": [
+   "Hindon Airport / Hindon Air Force Station 8.9 km"
+  ],
+  "heights": [
+   300,
+   300,
+   300,
+   300,
+   300,
+   300,
+   300,
+   300,
+   300
+  ],
+  "weather": {
+   "src": "ERA5 reanalysis (Open-Meteo archive)",
+   "v50": 7.43,
+   "v90": 8.370000000000001,
+   "cb50": 1500,
+   "hold": 0
+  },
+  "evidence": null
+ },
+ {
+  "id": "nepal",
+  "modules": 3,
+  "cov": 0.969979061985071,
+  "met": true,
+  "share": 1,
+  "modulesFor": {
+   "50%": 3,
+   "80%": 3,
+   "90%": 3,
+   "100%": 3
+  },
+  "lastUp": 133,
+  "trigger": "USGS EQ 2026-08-26T02:52:10.000Z",
+  "nextRadarH": null,
+  "nextRadarActualErrH": null,
+  "nextOptH": 26.3,
+  "nextOptErrH": 0,
+  "routesCut": 0,
+  "routes": 3,
+  "airspace": [],
+  "heights": [
+   150,
+   200,
+   200
+  ],
+  "weather": {
+   "src": "ERA5 reanalysis (Open-Meteo archive)",
+   "v50": 1.175,
+   "v90": 2.6369999999999996,
+   "cb50": 1500,
+   "hold": 0
+  },
+  "evidence": [
+   {
+    "id": "gyirong-border-gate",
+    "inHazard": true,
+    "near": true,
+    "covered": true
+   },
+   {
+    "id": "timure-cluster",
+    "inHazard": true,
+    "near": true,
+    "covered": true
+   },
+   {
+    "id": "rasuwagadhi-geoconfirmed",
+    "inHazard": false,
+    "near": true,
+    "covered": true
+   }
+  ]
+ }
+]

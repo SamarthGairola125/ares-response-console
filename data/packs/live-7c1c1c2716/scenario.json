@@ -1,0 +1,46 @@
+{
+ "id": "live-7c1c1c2716",
+ "tab": "Joshimath landslide (test)",
+ "name": "Joshimath landslide (test)",
+ "code": "LIVE-7C1C1C2716",
+ "place": "Joshimath landslide (test)",
+ "lat": 30.555,
+ "lon": 79.564,
+ "S": 6000,
+ "vexReal": 1.2,
+ "env": "suburban",
+ "type": "debris",
+ "start": "2026-11-25T12:30:00Z",
+ "sources": [],
+ "cond": {
+  "rain": "from feeds",
+  "wind": 15,
+  "water": "",
+  "vis": "",
+  "temp": 25
+ },
+ "fleet": {
+  "h": 200,
+  "fov": 110,
+  "k": 1,
+  "target": 0.9
+ },
+ "people": 145,
+ "devFrac": 0.6,
+ "maxSlope": 0.45,
+ "teamKmh": 5,
+ "occ": 5,
+ "Kmax": 26,
+ "live": true,
+ "peopleBasis": "ASSUMPTION: 10 % of 1449 exposed residents (HRSL) need assistance",
+ "osmUnavailable": true,
+ "osmErrors": [
+  "overpass-api.de: overpass: HTTP 503",
+  "overpass.kumi.systems: overpass: This operation was aborted",
+  "maps.mail.ru: overpass: HTTP 504",
+  "overpass.private.coffee: overpass: This operation was aborted"
+ ],
+ "hazardSource": "MODELLED prior from terrain (height above nearest drainage) — replace with an observed map when available",
+ "builtMs": 207696,
+ "airfields": []
+}

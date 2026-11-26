@@ -1,0 +1,3096 @@
+{
+ "version": "0.4.0",
+ "datasets": [
+  {
+   "dataset_id": "assam.buildings_ml",
+   "scenario_id": "assam",
+   "layer_name": "buildings_ml",
+   "asset_path": "assam/vectors/osm.json",
+   "checksum": "sha256:c470f17c3c1eefb1dcc251afe56601538bf41b7adbe2f217a75b3cec05bc8825",
+   "bytes": 1218208,
+   "retrieved_at": "2026-10-25T14:20:30Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "vector JSON (merged into osm.json, src=\"ml\")",
+   "source_name": "Google Open Buildings v3 (confidence >= 0.70)",
+   "source_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_6_gzip_no_header/375b_buildings.csv.gz",
+   "landing_page_url": "https://sites.research.google/open-buildings/",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "imagery dates vary (approx. 2014-2023)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "footprints within AOI x1.05 added where their centroid does not intersect an OSM building polygon; invalid polygons repaired with buffer(0); < 6 m2 dropped",
+   "license": "CC BY 4.0 / ODbL 1.0 (dual)",
+   "attribution": "Google Open Buildings v3 (CC BY 4.0)",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Machine-learning footprints from satellite imagery of mixed dates; false positives/negatives; may include buildings destroyed by the event or miss new ones. Heights are model estimates where present, otherwise unknown.",
+   "validation_status": "count + overlap with OSM checked",
+   "added": 6866,
+   "osm_buildings": 14
+  },
+  {
+   "dataset_id": "assam.dem",
+   "scenario_id": "assam",
+   "layer_name": "dem",
+   "asset_path": "assam/terrain/dem.f32",
+   "checksum": "sha256:a5784a57a6f5e4917665206a88ad4dbaaaa4bc4c7ad20da3f783b14b2b778791",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:35:46Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "layer_desc": "Model-grid elevation (225x225)",
+   "processed_resolution_m": 26.79,
+   "grid": 225,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E091_00_DEM/Copernicus_DSM_COG_10_N26_00_E091_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.7,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 44.30730739186055,
+    "max": 204.39175568738634,
+    "mean": 54.23684735748441,
+    "std": 17.758365082467993,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1119460
+   }
+  },
+  {
+   "dataset_id": "assam.dem_context",
+   "scenario_id": "assam",
+   "layer_name": "dem_context",
+   "asset_path": "assam/terrain/dem_context.f32",
+   "checksum": "sha256:32e014058fbe32914f93ff592d236235e2a863414c22dcee54593aa8aa323529",
+   "bytes": 103684,
+   "retrieved_at": "2026-10-25T13:35:46Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "layer_desc": "Context elevation 161x161 over 30 km (display only, not used by the model)",
+   "processed_resolution_m": 187.5,
+   "grid": 161,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N26_00_E091_00_DEM/Copernicus_DSM_COG_10_N26_00_E091_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.7,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 44.30730739186055,
+    "max": 204.39175568738634,
+    "mean": 54.23684735748441,
+    "std": 17.758365082467993,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1119460
+   }
+  },
+  {
+   "dataset_id": "assam.hazard_observed",
+   "scenario_id": "assam",
+   "layer_name": "hazard_observed",
+   "asset_path": "assam/hazard/observed_mask.u8",
+   "checksum": "sha256:712ec73771aaee3ad7fd0bee7ae9f29d0c25b3aac8839949eebce5dfaee32904",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:41:18Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "raster/uint8 mask (1 = observed change)",
+   "source_name": "Derived from Sentinel-1 RTC (this pipeline)",
+   "source_url": "2022-02-06T23:47:26.332866Z;2022-06-30T23:47:31.688304Z",
+   "landing_page_url": "",
+   "observation_start": "2022-02-06T23:47:26.332866Z",
+   "observation_end": "2022-06-30T23:47:31.688304Z",
+   "published_at": "",
+   "valid_as_of": "2022-06-30",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "boolean",
+   "processing_method": "Sentinel-1 RTC (gamma0, Planetary Computer) VV, averaged to the model grid, 3x3 median filter; water = VV < -18 dB. Flood (new water) = water on the post-event date AND not water on the dry-season baseline (same relative orbit 77, descending) AND JRC GSW occurrence < 20% (excludes the routinely wet river bed and chars); binary opening (1 iter). Wind-roughened open water and flooded vegetation/settlements (double bounce) are known false negatives; radar shadow on slopes is negligible on this floodplain.",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Derived change indicator, NOT an official damage or flood map and not field-validated. Snapshot of one date; flood extent changed daily.",
+   "validation_status": "visual comparison with imagery; area reported",
+   "area_km2": 3.777
+  },
+  {
+   "dataset_id": "assam.hazard_water_post",
+   "scenario_id": "assam",
+   "layer_name": "hazard_water_post",
+   "asset_path": "assam/hazard/water_post.u8",
+   "checksum": "sha256:d622ebf47d4571fea7b3040f7ed08a515e71bb41af087deb8d6ea966daa878c9",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T15:51:41Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "uint8 raster 225x225 (1 = radar water)",
+   "source_name": "Derived from Sentinel-1 RTC VV (this pipeline)",
+   "source_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2022/6/30/IW/DV/S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_D88F/measurement/iw-vv.rtc.tiff",
+   "landing_page_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_rtc",
+   "observation_start": "2022-06-30T23:47:31.688304Z",
+   "observation_end": "2022-06-30T23:47:31.688304Z",
+   "published_at": "",
+   "valid_as_of": "2022-06-30",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "class",
+   "processing_method": "Sentinel-1 RTC VV gamma0 averaged to the model grid, 3x3 median filter; water = VV < -18 dB (same step as hazard_observed)",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2022; RTC \u00a9 Microsoft Planetary Computer",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Radar water threshold: smooth surfaces (sand bars, some roads) can read as water; vegetation-covered water is missed.",
+   "validation_status": "visual comparison with radar image",
+   "item_id": "S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_rtc"
+  },
+  {
+   "dataset_id": "assam.hazard_water_pre",
+   "scenario_id": "assam",
+   "layer_name": "hazard_water_pre",
+   "asset_path": "assam/hazard/water_pre.u8",
+   "checksum": "sha256:6178591085a6845b858e8faa213f19573c87a53fe0f9af3e5de7891cd3f33253",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T15:51:41Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "uint8 raster 225x225 (1 = radar water)",
+   "source_name": "Derived from Sentinel-1 RTC VV (this pipeline)",
+   "source_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2022/2/6/IW/DV/S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_7855/measurement/iw-vv.rtc.tiff",
+   "landing_page_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_rtc",
+   "observation_start": "2022-02-06T23:47:26.332866Z",
+   "observation_end": "2022-02-06T23:47:26.332866Z",
+   "published_at": "",
+   "valid_as_of": "2022-02-06",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "class",
+   "processing_method": "Sentinel-1 RTC VV gamma0 averaged to the model grid, 3x3 median filter; water = VV < -18 dB (same step as hazard_observed)",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2022; RTC \u00a9 Microsoft Planetary Computer",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Radar water threshold: smooth surfaces (sand bars, some roads) can read as water; vegetation-covered water is missed.",
+   "validation_status": "visual comparison with radar image",
+   "item_id": "S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_rtc"
+  },
+  {
+   "dataset_id": "assam.imagery_context",
+   "scenario_id": "assam",
+   "layer_name": "imagery_context",
+   "asset_path": "assam/imagery/context.jpg",
+   "checksum": "sha256:ee6ae7f56c91cf281fa2eee67414b5c3e843b474b14b1143cd4485258296a84d",
+   "bytes": 921034,
+   "retrieved_at": "2026-10-25T13:37:37Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "image/jpeg RGB",
+   "source_name": "Copernicus Sentinel-2 L2A TCI",
+   "source_url": "S2A_46RCQ_20220307_0_L2A;S2A_46RCP_20220307_0_L2A",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1",
+   "observation_start": "2022-03-07T04:41:14.971000Z",
+   "observation_end": "2022-03-07T04:41:14.971000Z",
+   "published_at": "",
+   "valid_as_of": "2022-03-07",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 14.6,
+   "units": "8-bit",
+   "processing_method": "same-day neighbouring tiles mosaicked to fill edges; cubic resample",
+   "license": "Copernicus Sentinel data terms",
+   "attribution": "Contains modified Copernicus Sentinel data 2022",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Display only. Clouds/no-data (black) possible at the edges.",
+   "validation_status": "visual check",
+   "spatial_extent_override": {
+    "size_m": 30000.0
+   }
+  },
+  {
+   "dataset_id": "assam.imagery_s1_post_vv",
+   "scenario_id": "assam",
+   "layer_name": "imagery_s1_post_vv",
+   "asset_path": "assam/imagery/s1_post_vv.jpg",
+   "checksum": "sha256:c1b1f7df6c42e76590007d0136bb7665be02795cd554287fd2a0d12af50d7e8d",
+   "bytes": 510715,
+   "retrieved_at": "2026-10-25T13:49:38Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "image/jpeg greyscale (radar backscatter)",
+   "source_name": "Copernicus Sentinel-1 RTC gamma0 VV (Microsoft Planetary Computer)",
+   "source_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2022/6/30/IW/DV/S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_D88F/measurement/iw-vv.rtc.tiff",
+   "landing_page_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_rtc",
+   "observation_start": "2022-06-30T23:47:31.688304Z",
+   "observation_end": "2022-06-30T23:47:31.688304Z",
+   "published_at": "",
+   "valid_as_of": "2022-06-30",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 3.91,
+   "units": "VV gamma0 dB mapped linearly from -24 dB (black) to -2 dB (white)",
+   "processing_method": "average resampling onto the AEQD AOI square; dB stretch",
+   "license": "Copernicus Sentinel data terms; RTC processing by Catalyst/Microsoft (CC BY 4.0)",
+   "attribution": "Contains modified Copernicus Sentinel data 2022; RTC \u00a9 Microsoft Planetary Computer",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Radar image: dark = smooth surfaces (calm water, some roads/sand); speckle; not a photograph.",
+   "validation_status": "visual check",
+   "item_id": "S1A_IW_GRDH_1SDV_20220630T234719_20220630T234744_043899_053D9A_rtc"
+  },
+  {
+   "dataset_id": "assam.imagery_s1_pre_vv",
+   "scenario_id": "assam",
+   "layer_name": "imagery_s1_pre_vv",
+   "asset_path": "assam/imagery/s1_pre_vv.jpg",
+   "checksum": "sha256:bff437203378d3f0ee8989711386b9d0bbe918769b8e462aad02613fa3792988",
+   "bytes": 482172,
+   "retrieved_at": "2026-10-25T13:49:36Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "image/jpeg greyscale (radar backscatter)",
+   "source_name": "Copernicus Sentinel-1 RTC gamma0 VV (Microsoft Planetary Computer)",
+   "source_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2022/2/6/IW/DV/S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_7855/measurement/iw-vv.rtc.tiff",
+   "landing_page_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_rtc",
+   "observation_start": "2022-02-06T23:47:26.332866Z",
+   "observation_end": "2022-02-06T23:47:26.332866Z",
+   "published_at": "",
+   "valid_as_of": "2022-02-06",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 3.91,
+   "units": "VV gamma0 dB mapped linearly from -24 dB (black) to -2 dB (white)",
+   "processing_method": "average resampling onto the AEQD AOI square; dB stretch",
+   "license": "Copernicus Sentinel data terms; RTC processing by Catalyst/Microsoft (CC BY 4.0)",
+   "attribution": "Contains modified Copernicus Sentinel data 2022; RTC \u00a9 Microsoft Planetary Computer",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Radar image: dark = smooth surfaces (calm water, some roads/sand); speckle; not a photograph.",
+   "validation_status": "visual check",
+   "item_id": "S1A_IW_GRDH_1SDV_20220206T234713_20220206T234738_041799_04F99B_rtc"
+  },
+  {
+   "dataset_id": "assam.imagery_s2_pre",
+   "scenario_id": "assam",
+   "layer_name": "imagery_s2_pre",
+   "asset_path": "assam/imagery/s2_pre.jpg",
+   "checksum": "sha256:0e43d1862a801e81e029b44a6e3c0966954aadebab26d061c9d5f48028731d1e",
+   "bytes": 506864,
+   "retrieved_at": "2026-10-25T13:37:28Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/46/R/CQ/2022/3/S2A_46RCQ_20220307_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_46RCQ_20220307_0_L2A",
+   "observation_start": "2022-03-07T04:41:14.971000Z",
+   "observation_end": "2022-03-07T04:41:14.971000Z",
+   "published_at": "2022-11-06T03:34:41.721Z",
+   "valid_as_of": "2022-03-07",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2022, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.0%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.1015, 'cloud_med': 0.0}. Pre-event baseline.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2A_46RCQ_20220307_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.1015,
+    "cloud_med": 0.0
+   }
+  },
+  {
+   "dataset_id": "assam.jrc_water_occurrence",
+   "scenario_id": "assam",
+   "layer_name": "jrc_water_occurrence",
+   "asset_path": "assam/hazard/jrc_occurrence.u8",
+   "checksum": "sha256:d1d275efd13db713268e630dce14abd3cc6eac44cee27ee10b2cb403974f5071",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:41:18Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "raster/uint8 percent",
+   "source_name": "JRC Global Surface Water v1.4 occurrence 1984-2021",
+   "source_url": "https://storage.googleapis.com/global-surface-water/downloads2021/occurrence/occurrence_90E_30Nv1_4_2021.tif",
+   "landing_page_url": "https://global-surface-water.appspot.com/download",
+   "observation_start": "1984-03-16",
+   "observation_end": "2021-12-31",
+   "published_at": "2022",
+   "valid_as_of": "2021",
+   "native_resolution_m": 30,
+   "processed_resolution_m": 26.79,
+   "units": "% of valid Landsat observations with water",
+   "processing_method": "average resampling to model grid",
+   "license": "Copernicus / JRC open data (free, attribution)",
+   "attribution": "Source: EC JRC/Google \u2014 Pekel et al. (2016) Nature 540:418-422",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Long-term statistic; used only to separate routinely wet river/char areas from unusual inundation.",
+   "validation_status": "range checked"
+  },
+  {
+   "dataset_id": "assam.landcover",
+   "scenario_id": "assam",
+   "layer_name": "landcover",
+   "asset_path": "assam/landcover/worldcover.u8",
+   "checksum": "sha256:2d93dc56e4230c0de416f966ef85c658f19ff630c8f7937afa1b9c3eedcd1b80",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:35:48Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "class_histogram": {
+    "Tree cover": 11466,
+    "Grassland": 5588,
+    "Cropland": 23229,
+    "Built-up": 641,
+    "Bare / sparse vegetation": 540,
+    "Permanent water bodies": 9161
+   },
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N24E090_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "assam.landcover_context",
+   "scenario_id": "assam",
+   "layer_name": "landcover_context",
+   "asset_path": "assam/landcover/worldcover_context.u8",
+   "checksum": "sha256:6d3ff53a808913ac5ec9557a4af55b07b58605c5b85f65afdb0b2fd316b4bae9",
+   "bytes": 25921,
+   "retrieved_at": "2026-10-25T13:35:48Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "grid": 161,
+   "processed_resolution_m": 187.5,
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N24E090_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "assam.osm",
+   "scenario_id": "assam",
+   "layer_name": "osm",
+   "asset_path": "assam/vectors/osm.json",
+   "checksum": "sha256:670085399543719aa6ba275f945689f877922e0347e07f6d956a1d16fd46baf3",
+   "bytes": 205126,
+   "retrieved_at": "2026-10-25T14:20:29Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "data_type": "vector JSON (local metres, AEQD)",
+   "source_name": "OpenStreetMap (API 0.6 /map)",
+   "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=91.79346,26.22686,91.86254,26.28914",
+   "landing_page_url": "https://www.openstreetmap.org/copyright",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "2026-10-25",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres (x east, y north)",
+   "processing_method": "raw OSM XML -> ways classified by tags (highway, waterway, natural=water, building, landuse, bridge, place); projected to AEQD; clipped to AOI x1.12",
+   "license": "ODbL 1.0",
+   "attribution": "\u00a9 OpenStreetMap contributors",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Volunteered data of uneven completeness; current OSM state (may include post-event edits; does not mark damage). Attributes like surface/condition mostly absent and are NOT inferred.",
+   "validation_status": "feature counts + alignment checks",
+   "feature_counts": {
+    "roads": 188,
+    "waterways": 5,
+    "water": 1,
+    "buildings": 14,
+    "places": 1,
+    "landuse": 11,
+    "bridges": 8
+   }
+  },
+  {
+   "dataset_id": "assam.population_belief",
+   "scenario_id": "assam",
+   "layer_name": "population_belief",
+   "asset_path": "assam/population/worldpop_belief.f32",
+   "checksum": "sha256:9ff4c1db0ed7cb13cfaa7f23897a5bc117138043ab44f07622138162c29bd86a",
+   "bytes": 6400,
+   "retrieved_at": "2026-10-25T13:37:53Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "grid": 40,
+   "processed_resolution_m": 150.0,
+   "total": 31968.9,
+   "direct_sum": 32113.6,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 31969 vs direct 32114"
+  },
+  {
+   "dataset_id": "assam.population_grid",
+   "scenario_id": "assam",
+   "layer_name": "population_grid",
+   "asset_path": "assam/population/worldpop_grid.f32",
+   "checksum": "sha256:4627f5472cdc004a5f8b3f660cb728af4202332d7cb1df3fa9032c87d0ff9ab0",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:37:53Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=26.258 +lon_0=91.828 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     26.258,
+     91.828
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     91.797962,
+     26.230919,
+     91.858038,
+     26.285078
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "total": 32195.6,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 31969 vs direct 32114"
+  },
+  {
+   "dataset_id": "dehradun.buildings_ml",
+   "scenario_id": "dehradun",
+   "layer_name": "buildings_ml",
+   "asset_path": "dehradun/vectors/osm.json",
+   "checksum": "sha256:6685c5b0935858ee32bb577945f30a54e562383acde41a20d19ef5458b6134c1",
+   "bytes": 1375202,
+   "retrieved_at": "2026-10-25T14:20:27Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "vector JSON (merged into osm.json, src=\"ml\")",
+   "source_name": "Google Open Buildings v3 (confidence >= 0.70)",
+   "source_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_6_gzip_no_header/3909_buildings.csv.gz",
+   "landing_page_url": "https://sites.research.google/open-buildings/",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "imagery dates vary (approx. 2014-2023)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "footprints within AOI x1.05 added where their centroid does not intersect an OSM building polygon; invalid polygons repaired with buffer(0); < 6 m2 dropped",
+   "license": "CC BY 4.0 / ODbL 1.0 (dual)",
+   "attribution": "Google Open Buildings v3 (CC BY 4.0)",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Machine-learning footprints from satellite imagery of mixed dates; false positives/negatives; may include buildings destroyed by the event or miss new ones. Heights are model estimates where present, otherwise unknown.",
+   "validation_status": "count + overlap with OSM checked",
+   "added": 6791,
+   "osm_buildings": 26
+  },
+  {
+   "dataset_id": "dehradun.dem",
+   "scenario_id": "dehradun",
+   "layer_name": "dem",
+   "asset_path": "dehradun/terrain/dem.f32",
+   "checksum": "sha256:5a7ceed724c8cee6afaf4f2a965b2bd77e5c1815190042c92fe66ba3b088572e",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:35:34Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "layer_desc": "Model-grid elevation (225x225)",
+   "processed_resolution_m": 26.79,
+   "grid": 225,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E077_00_DEM/Copernicus_DSM_COG_10_N30_00_E077_00_DEM.tif;https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E078_00_DEM/Copernicus_DSM_COG_10_N30_00_E078_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    26.7,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 694.7823198338981,
+    "max": 1733.5527828717052,
+    "mean": 1023.0383884299964,
+    "std": 213.22920530636583,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1163636
+   }
+  },
+  {
+   "dataset_id": "dehradun.dem_context",
+   "scenario_id": "dehradun",
+   "layer_name": "dem_context",
+   "asset_path": "dehradun/terrain/dem_context.f32",
+   "checksum": "sha256:9d94fd2a554b93519e9a275502e4ca14f5bc9f7ff6b5db85ae5a7957648c7def",
+   "bytes": 103684,
+   "retrieved_at": "2026-10-25T13:35:34Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "layer_desc": "Context elevation 161x161 over 30 km (display only, not used by the model)",
+   "processed_resolution_m": 187.5,
+   "grid": 161,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E077_00_DEM/Copernicus_DSM_COG_10_N30_00_E077_00_DEM.tif;https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N30_00_E078_00_DEM/Copernicus_DSM_COG_10_N30_00_E078_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    26.7,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 694.7823198338981,
+    "max": 1733.5527828717052,
+    "mean": 1023.0383884299964,
+    "std": 213.22920530636583,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1163636
+   }
+  },
+  {
+   "dataset_id": "dehradun.hazard_observed",
+   "scenario_id": "dehradun",
+   "layer_name": "hazard_observed",
+   "asset_path": "dehradun/hazard/observed_mask.u8",
+   "checksum": "sha256:4ccc62745459619b41bb4b54e7b960cbc38033c68c3a903fb7e117dc6ee66251",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:39:16Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "raster/uint8 mask (1 = observed change)",
+   "source_name": "Derived from Sentinel-2 L2A (this pipeline)",
+   "source_url": "S2B_43RGP_20241025_0_L2A;S2A_43RGP_20250927_0_L2A",
+   "landing_page_url": "",
+   "observation_start": "S2B_43RGP_20241025_0_L2A",
+   "observation_end": "S2A_43RGP_20250927_0_L2A",
+   "published_at": "",
+   "valid_as_of": "S2A_43RGP_",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "boolean",
+   "processing_method": "Sentinel-2 L2A change detection on the model grid: debris/scour = valid in both scenes (SCL not cloud/shadow/no-data) AND [(post-pre NDVI < -0.15 and post NDVI < 0.45) OR (post NDVI < 0.18, bright, pre NDVI > 0.25)] AND (within 2 cells of a DEM-derived channel, D8 contributing area > 0.1 km2, OR within 150 m of a mapped OSM waterway); 8-connected components smaller than 8 cells (~0.006 km2) removed (no opening, so 1-cell-wide channels survive).",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Derived change indicator, NOT an official damage or flood map and not field-validated. Includes any vegetation loss near rivers between the two dates (e.g. seasonal/agricultural change); misses damage under intact canopy and in built-up areas; post-event scene is weeks-months after the event.",
+   "validation_status": "visual comparison with imagery; area reported",
+   "area_km2": 0.407
+  },
+  {
+   "dataset_id": "dehradun.imagery_context",
+   "scenario_id": "dehradun",
+   "layer_name": "imagery_context",
+   "asset_path": "dehradun/imagery/context.jpg",
+   "checksum": "sha256:89e5a6f73224257e9e90eac56ec75429b46ae7c7bbfb9ba5cb6d95252f501278",
+   "bytes": 971710,
+   "retrieved_at": "2026-10-25T13:36:32Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "image/jpeg RGB",
+   "source_name": "Copernicus Sentinel-2 L2A TCI",
+   "source_url": "S2A_43RGP_20250927_0_L2A;S2A_44RKU_20250927_1_L2A",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1",
+   "observation_start": "2025-09-27T05:40:50.001000Z",
+   "observation_end": "2025-09-27T05:40:50.001000Z",
+   "published_at": "",
+   "valid_as_of": "2025-09-27",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 14.6,
+   "units": "8-bit",
+   "processing_method": "same-day neighbouring tiles mosaicked to fill edges; cubic resample",
+   "license": "Copernicus Sentinel data terms",
+   "attribution": "Contains modified Copernicus Sentinel data 2025",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Display only. Clouds/no-data (black) possible at the edges.",
+   "validation_status": "visual check",
+   "spatial_extent_override": {
+    "size_m": 30000.0
+   }
+  },
+  {
+   "dataset_id": "dehradun.imagery_s2_post",
+   "scenario_id": "dehradun",
+   "layer_name": "imagery_s2_post",
+   "asset_path": "dehradun/imagery/s2_post.jpg",
+   "checksum": "sha256:3d475aa79e1abe8e8ea539db90226fded2e05a8695e584e63e6bcac456ec9368",
+   "bytes": 536542,
+   "retrieved_at": "2026-10-25T13:36:16Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/R/GP/2025/9/S2A_43RGP_20250927_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_43RGP_20250927_0_L2A",
+   "observation_start": "2025-09-27T05:40:50.001000Z",
+   "observation_end": "2025-09-27T05:40:50.001000Z",
+   "published_at": "2025-09-27T10:30:45.469Z",
+   "valid_as_of": "2025-09-27",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2025, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.1%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.0}. Post-event; acquisition is 12 days after the event.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2A_43RGP_20250927_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.0
+   }
+  },
+  {
+   "dataset_id": "dehradun.imagery_s2_pre",
+   "scenario_id": "dehradun",
+   "layer_name": "imagery_s2_pre",
+   "asset_path": "dehradun/imagery/s2_pre.jpg",
+   "checksum": "sha256:dfbb9a4c5982eef0d391a17b583a155f9150ed389dd8e627648d52aecadf8b18",
+   "bytes": 593198,
+   "retrieved_at": "2026-10-25T13:36:14Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/R/GP/2024/10/S2B_43RGP_20241025_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43RGP_20241025_0_L2A",
+   "observation_start": "2024-10-25T05:40:35.232000Z",
+   "observation_end": "2024-10-25T05:40:35.232000Z",
+   "published_at": "2024-10-25T19:34:26.281Z",
+   "valid_as_of": "2024-10-25",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2024, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.0%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.0}. Pre-event baseline.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2B_43RGP_20241025_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.0
+   }
+  },
+  {
+   "dataset_id": "dehradun.landcover",
+   "scenario_id": "dehradun",
+   "layer_name": "landcover",
+   "asset_path": "dehradun/landcover/worldcover.u8",
+   "checksum": "sha256:f98016815f47cf86cebdd79d5b2cb14d4bba76dc45ae89d6f1c8a745959caf0e",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:35:38Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "class_histogram": {
+    "Tree cover": 43538,
+    "Shrubland": 20,
+    "Grassland": 3069,
+    "Cropland": 2109,
+    "Built-up": 1449,
+    "Bare / sparse vegetation": 437,
+    "Permanent water bodies": 3
+   },
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N30E075_Map.tif;https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N30E078_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "dehradun.landcover_context",
+   "scenario_id": "dehradun",
+   "layer_name": "landcover_context",
+   "asset_path": "dehradun/landcover/worldcover_context.u8",
+   "checksum": "sha256:c76324cab0f5d986f769d4baf4ea6927df22fcc73502e32d667f9d8747105c36",
+   "bytes": 25921,
+   "retrieved_at": "2026-10-25T13:35:38Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "grid": 161,
+   "processed_resolution_m": 187.5,
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N30E075_Map.tif;https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N30E078_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "dehradun.osm",
+   "scenario_id": "dehradun",
+   "layer_name": "osm",
+   "asset_path": "dehradun/vectors/osm.json",
+   "checksum": "sha256:41eced216b14a23fe388f1184aa6f2d70cf209c7315f7f9eb235a30ff6c7159a",
+   "bytes": 339297,
+   "retrieved_at": "2026-10-25T14:20:26Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "data_type": "vector JSON (local metres, AEQD)",
+   "source_name": "OpenStreetMap (API 0.6 /map)",
+   "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=78.09710,30.33487,78.16890,30.39712",
+   "landing_page_url": "https://www.openstreetmap.org/copyright",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "2026-10-25",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres (x east, y north)",
+   "processing_method": "raw OSM XML -> ways classified by tags (highway, waterway, natural=water, building, landuse, bridge, place); projected to AEQD; clipped to AOI x1.12",
+   "license": "ODbL 1.0",
+   "attribution": "\u00a9 OpenStreetMap contributors",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Volunteered data of uneven completeness; current OSM state (may include post-event edits; does not mark damage). Attributes like surface/condition mostly absent and are NOT inferred.",
+   "validation_status": "feature counts + alignment checks",
+   "feature_counts": {
+    "roads": 450,
+    "waterways": 7,
+    "water": 3,
+    "buildings": 26,
+    "places": 25,
+    "landuse": 16,
+    "bridges": 23
+   }
+  },
+  {
+   "dataset_id": "dehradun.population_belief",
+   "scenario_id": "dehradun",
+   "layer_name": "population_belief",
+   "asset_path": "dehradun/population/worldpop_belief.f32",
+   "checksum": "sha256:d6e52e8a1913ba0dbcd7d412be1305f09ded71d00eeecc1993c91fabb0416b10",
+   "bytes": 6400,
+   "retrieved_at": "2026-10-25T13:36:40Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "grid": 40,
+   "processed_resolution_m": 150.0,
+   "total": 13512.4,
+   "direct_sum": 13291.6,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 13512 vs direct 13292"
+  },
+  {
+   "dataset_id": "dehradun.population_grid",
+   "scenario_id": "dehradun",
+   "layer_name": "population_grid",
+   "asset_path": "dehradun/population/worldpop_grid.f32",
+   "checksum": "sha256:a026493ce84cc6ab72eeebbc137c2f5a3dac5c7afc73b9b13e97f059ebcca8e5",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:36:40Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=30.366 +lon_0=78.133 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     30.366,
+     78.133
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     78.101784,
+     30.338935,
+     78.164216,
+     30.393061
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "total": 13620.4,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 13512 vs direct 13292"
+  },
+  {
+   "dataset_id": "delhi.buildings_ml",
+   "scenario_id": "delhi",
+   "layer_name": "buildings_ml",
+   "asset_path": "delhi/vectors/osm.json",
+   "checksum": "sha256:e68deb5946d666e7e9e0a316f0b5bdce226e9cec53d6d5eaf5386034cee5e619",
+   "bytes": 2670667,
+   "retrieved_at": "2026-10-25T14:20:33Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "data_type": "vector JSON (merged into osm.json, src=\"ml\")",
+   "source_name": "Google Open Buildings v3 (confidence >= 0.70)",
+   "source_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_6_gzip_no_header/390d_buildings.csv.gz",
+   "landing_page_url": "https://sites.research.google/open-buildings/",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "imagery dates vary (approx. 2014-2023)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "footprints within AOI x1.05 added where their centroid does not intersect an OSM building polygon; invalid polygons repaired with buffer(0); < 6 m2 dropped",
+   "license": "CC BY 4.0 / ODbL 1.0 (dual)",
+   "attribution": "Google Open Buildings v3 (CC BY 4.0)",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Machine-learning footprints from satellite imagery of mixed dates; false positives/negatives; may include buildings destroyed by the event or miss new ones. Heights are model estimates where present, otherwise unknown.",
+   "validation_status": "count + overlap with OSM checked",
+   "added": 15743,
+   "osm_buildings": 579
+  },
+  {
+   "dataset_id": "delhi.dem",
+   "scenario_id": "delhi",
+   "layer_name": "dem",
+   "asset_path": "delhi/terrain/dem.f32",
+   "checksum": "sha256:9961840bb97682a45035d920e5e6429123d3fab42c89144e61ce5da93f44fd38",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:35:51Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "layer_desc": "Model-grid elevation (225x225)",
+   "processed_resolution_m": 8.93,
+   "grid": 225,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/Copernicus_DSM_COG_10_N28_00_E077_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.1,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 201.4722026805553,
+    "max": 219.78461976571705,
+    "mean": 211.14453153904344,
+    "std": 2.910584595743757,
+    "nodata_filled_px": 0,
+    "mosaic_px": 127300
+   }
+  },
+  {
+   "dataset_id": "delhi.dem_context",
+   "scenario_id": "delhi",
+   "layer_name": "dem_context",
+   "asset_path": "delhi/terrain/dem_context.f32",
+   "checksum": "sha256:76aed76a7be8d273682ee3759f1e67a87be57608ecebe5a447992393d6beda84",
+   "bytes": 103684,
+   "retrieved_at": "2026-10-25T13:35:51Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "layer_desc": "Context elevation 161x161 over 10 km (display only, not used by the model)",
+   "processed_resolution_m": 62.5,
+   "grid": 161,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/Copernicus_DSM_COG_10_N28_00_E077_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.1,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 201.4722026805553,
+    "max": 219.78461976571705,
+    "mean": 211.14453153904344,
+    "std": 2.910584595743757,
+    "nodata_filled_px": 0,
+    "mosaic_px": 127300
+   }
+  },
+  {
+   "dataset_id": "delhi.imagery_context",
+   "scenario_id": "delhi",
+   "layer_name": "imagery_context",
+   "asset_path": "delhi/imagery/context.jpg",
+   "checksum": "sha256:80851926166d9e4b41f258df68817947fa117e6d10302698c05cb48da789ee5e",
+   "bytes": 834595,
+   "retrieved_at": "2026-10-25T13:38:16Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "data_type": "image/jpeg RGB",
+   "source_name": "Copernicus Sentinel-2 L2A TCI",
+   "source_url": "S2B_43RGM_20260217_1_L2A;S2A_43RGM_20260217_0_L2A",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1",
+   "observation_start": "2026-02-17T05:40:59.325000Z",
+   "observation_end": "2026-02-17T05:40:59.325000Z",
+   "published_at": "",
+   "valid_as_of": "2026-02-17",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 4.9,
+   "units": "8-bit",
+   "processing_method": "same-day neighbouring tiles mosaicked to fill edges; cubic resample",
+   "license": "Copernicus Sentinel data terms",
+   "attribution": "Contains modified Copernicus Sentinel data 2026",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Display only. Clouds/no-data (black) possible at the edges.",
+   "validation_status": "visual check",
+   "spatial_extent_override": {
+    "size_m": 10000.0
+   }
+  },
+  {
+   "dataset_id": "delhi.imagery_s2_post",
+   "scenario_id": "delhi",
+   "layer_name": "imagery_s2_post",
+   "asset_path": "delhi/imagery/s2_post.jpg",
+   "checksum": "sha256:97f0b4236d5d4818e2de7d376655b00c500abff68a920587c158009d38f7cdbb",
+   "bytes": 448719,
+   "retrieved_at": "2026-10-25T13:38:10Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/R/GM/2026/2/S2B_43RGM_20260217_1_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43RGM_20260217_1_L2A",
+   "observation_start": "2026-02-17T05:40:59.325000Z",
+   "observation_end": "2026-02-17T05:40:59.325000Z",
+   "published_at": "2026-02-17T11:00:58.947Z",
+   "valid_as_of": "2026-02-17",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 0.98,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2026, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.0%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.0001}. Recent clear image (hypothetical scenario, no event).",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2B_43RGM_20260217_1_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.0001
+   }
+  },
+  {
+   "dataset_id": "delhi.landcover",
+   "scenario_id": "delhi",
+   "layer_name": "landcover",
+   "asset_path": "delhi/landcover/worldcover.u8",
+   "checksum": "sha256:d51858fd4736dc4451e5fd2729f16e6db9b1ab6b76e881a4dba94d1093ec2db3",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:35:53Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 8.93,
+   "class_histogram": {
+    "Tree cover": 3029,
+    "Shrubland": 7,
+    "Grassland": 918,
+    "Cropland": 159,
+    "Built-up": 45679,
+    "Bare / sparse vegetation": 760,
+    "Permanent water bodies": 73
+   },
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E075_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "delhi.landcover_context",
+   "scenario_id": "delhi",
+   "layer_name": "landcover_context",
+   "asset_path": "delhi/landcover/worldcover_context.u8",
+   "checksum": "sha256:55830cfccbce68d0fd326d660af6cd7da14e547e7191a1fb117fea9b9b76ed8d",
+   "bytes": 25921,
+   "retrieved_at": "2026-10-25T13:35:53Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "grid": 161,
+   "processed_resolution_m": 62.5,
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E075_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "delhi.osm",
+   "scenario_id": "delhi",
+   "layer_name": "osm",
+   "asset_path": "delhi/vectors/osm.json",
+   "checksum": "sha256:e6bebe84f2afdcaedaa3c8539361c8f8ac7a1301753326828cd654be1faa96ad",
+   "bytes": 378349,
+   "retrieved_at": "2026-10-25T14:20:31Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "data_type": "vector JSON (local metres, AEQD)",
+   "source_name": "OpenStreetMap (API 0.6 /map)",
+   "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=77.26623,28.65962,77.28977,28.68038",
+   "landing_page_url": "https://www.openstreetmap.org/copyright",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "2026-10-25",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres (x east, y north)",
+   "processing_method": "raw OSM XML -> ways classified by tags (highway, waterway, natural=water, building, landuse, bridge, place); projected to AEQD; clipped to AOI x1.12",
+   "license": "ODbL 1.0",
+   "attribution": "\u00a9 OpenStreetMap contributors",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Volunteered data of uneven completeness; current OSM state (may include post-event edits; does not mark damage). Attributes like surface/condition mostly absent and are NOT inferred.",
+   "validation_status": "feature counts + alignment checks",
+   "feature_counts": {
+    "roads": 1423,
+    "waterways": 5,
+    "water": 8,
+    "buildings": 579,
+    "places": 5,
+    "landuse": 26,
+    "bridges": 54
+   }
+  },
+  {
+   "dataset_id": "delhi.population_belief",
+   "scenario_id": "delhi",
+   "layer_name": "population_belief",
+   "asset_path": "delhi/population/worldpop_belief.f32",
+   "checksum": "sha256:d30c26e4741b9857b81fdbbdcba56b564d0d20a4fcf27a1c955cebcd0caf7dc0",
+   "bytes": 6400,
+   "retrieved_at": "2026-10-25T13:38:43Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "grid": 40,
+   "processed_resolution_m": 50.0,
+   "total": 134058.9,
+   "direct_sum": 127446.3,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 134059 vs direct 127446"
+  },
+  {
+   "dataset_id": "delhi.population_grid",
+   "scenario_id": "delhi",
+   "layer_name": "population_grid",
+   "asset_path": "delhi/population/worldpop_grid.f32",
+   "checksum": "sha256:5a9eceac6474710ff38fc9717cd9c936550de2aaa115231dc7a00afd07a14878",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:38:43Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.67 +lon_0=77.278 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.67,
+     77.278
+    ],
+    "size_m": 2000,
+    "bbox_ll": [
+     77.267769,
+     28.660977,
+     77.288231,
+     28.679023
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 8.93,
+   "total": 135203.9,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 134059 vs direct 127446"
+  },
+  {
+   "dataset_id": "nepal.buildings_ml",
+   "scenario_id": "nepal",
+   "layer_name": "buildings_ml",
+   "asset_path": "nepal/vectors/osm.json",
+   "checksum": "sha256:84df18398301b572829ffd1f44ad1949492734ce37179965bfa73041fc80b22b",
+   "bytes": 197749,
+   "retrieved_at": "2026-10-25T14:20:34Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "vector JSON (merged into osm.json, src=\"ml\")",
+   "source_name": "Google Open Buildings v3 (confidence >= 0.70)",
+   "source_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_6_gzip_no_header/39eb_buildings.csv.gz",
+   "landing_page_url": "https://sites.research.google/open-buildings/",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "imagery dates vary (approx. 2014-2023)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "footprints within AOI x1.05 added where their centroid does not intersect an OSM building polygon; invalid polygons repaired with buffer(0); < 6 m2 dropped",
+   "license": "CC BY 4.0 / ODbL 1.0 (dual)",
+   "attribution": "Google Open Buildings v3 (CC BY 4.0)",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Machine-learning footprints from satellite imagery of mixed dates; false positives/negatives; may include buildings destroyed by the event or miss new ones. Heights are model estimates where present, otherwise unknown.",
+   "validation_status": "count + overlap with OSM checked",
+   "added": 578,
+   "osm_buildings": 108
+  },
+  {
+   "dataset_id": "nepal.cems_vectors",
+   "scenario_id": "nepal",
+   "layer_name": "cems_vectors",
+   "asset_path": "nepal/vectors/cems.json",
+   "checksum": "sha256:1bfdc45b9a8d50121a8c1372ed1a5508cbb13380fadfd334c0a4a591dbde09c2",
+   "bytes": 102603,
+   "retrieved_at": "2026-10-25T14:48:51Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "vector JSON (local metres)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "builtUpP, transportationL, facilitiesA, observedEventA, areaOfInterestA layers reprojected to AEQD; attributes kept (damage_gra, obj_type, info)",
+   "uncertainty_notes": "Building points are photo-interpreted; damage grades Destroyed / Damaged / Possibly damaged per CEMS grading legend. Population and land-use statistics are CEMS estimates.",
+   "validation_status": "authoritative reference",
+   "counts": {
+    "buildings": 431,
+    "transport": 15,
+    "facilities": 1
+   },
+   "source_name": "Copernicus EMS Rapid Mapping EMSR927 AOI02 Timure \u2014 grading product v2",
+   "source_url": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR927/AOI02/GRA_PRODUCT/EMSR927_AOI02_GRA_PRODUCT_v2.zip",
+   "landing_page_url": "https://rapidmapping.emergency.copernicus.eu/EMSR927/",
+   "observation_start": "2026-08-27T05:05:00",
+   "observation_end": "2026-08-27T05:05:00",
+   "published_at": "2026-08-28T17:10:43.692032",
+   "valid_as_of": "2026-08-27",
+   "license": "Copernicus EMS products: free and open (Copernicus data policy, Reg. (EU) 1159/2013); attribution required",
+   "attribution": "\u00a9 European Union, Copernicus Emergency Management Service (EMSR927); imagery Legion",
+   "confidence_tier": "verified",
+   "product_sha256": "1f57ba3370597055b1372e26771923fdebc9870a52a8d3435c847cdf0a0b8db8"
+  },
+  {
+   "dataset_id": "nepal.dem",
+   "scenario_id": "nepal",
+   "layer_name": "dem",
+   "asset_path": "nepal/terrain/dem.f32",
+   "checksum": "sha256:7029b002d969a912059c044931f1580dd1e795f309536d19ace9b1f836f7be13",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:35:55Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "layer_desc": "Model-grid elevation (225x225)",
+   "processed_resolution_m": 26.79,
+   "grid": 225,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E085_00_DEM/Copernicus_DSM_COG_10_N28_00_E085_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.2,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 1619.000991637668,
+    "max": 3549.7859694463505,
+    "mean": 2444.9213414875394,
+    "std": 431.37089935959403,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1139540
+   }
+  },
+  {
+   "dataset_id": "nepal.dem_context",
+   "scenario_id": "nepal",
+   "layer_name": "dem_context",
+   "asset_path": "nepal/terrain/dem_context.f32",
+   "checksum": "sha256:f26e71f0d81d3bae4bbd3da717e59a2dd0732e1a59ded61240adf75c915d6f19",
+   "bytes": 103684,
+   "retrieved_at": "2026-10-25T13:35:55Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "layer_desc": "Context elevation 161x161 over 30 km (display only, not used by the model)",
+   "processed_resolution_m": 187.5,
+   "grid": 161,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E085_00_DEM/Copernicus_DSM_COG_10_N28_00_E085_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    27.2,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 1619.000991637668,
+    "max": 3549.7859694463505,
+    "mean": 2444.9213414875394,
+    "std": 431.37089935959403,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1139540
+   }
+  },
+  {
+   "dataset_id": "nepal.hazard_cems",
+   "scenario_id": "nepal",
+   "layer_name": "hazard_cems",
+   "asset_path": "nepal/hazard/cems_event.u8",
+   "checksum": "sha256:767a33237893865017a5f3b3ee10afb03bcec70d2a97da5316646fc5a063ff8e",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T14:48:51Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "uint8 raster 225x225 (0 outside CEMS AOI, 1 analysed/no event, 2 observed event)",
+   "native_resolution_m": null,
+   "processed_resolution_m": 26.79,
+   "units": "class",
+   "processing_method": "observedEventA polygons and areaOfInterestA (minus notAnalysedA) reprojected to the scenario AEQD CRS; point-in-polygon test at every model node",
+   "uncertainty_notes": "Photo-interpretation of VHR optical imagery 1 day after the event by the CEMS service provider; independent of this pipeline. Covers only the CEMS AOI; outside it the pipeline-derived mask is used.",
+   "validation_status": "authoritative reference; used to score the derived Sentinel-2 mask (see validation_report.md)",
+   "area_event_km2": 1.291,
+   "area_covered_km2": 2.975,
+   "source_name": "Copernicus EMS Rapid Mapping EMSR927 AOI02 Timure \u2014 grading product v2",
+   "source_url": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR927/AOI02/GRA_PRODUCT/EMSR927_AOI02_GRA_PRODUCT_v2.zip",
+   "landing_page_url": "https://rapidmapping.emergency.copernicus.eu/EMSR927/",
+   "observation_start": "2026-08-27T05:05:00",
+   "observation_end": "2026-08-27T05:05:00",
+   "published_at": "2026-08-28T17:10:43.692032",
+   "valid_as_of": "2026-08-27",
+   "license": "Copernicus EMS products: free and open (Copernicus data policy, Reg. (EU) 1159/2013); attribution required",
+   "attribution": "\u00a9 European Union, Copernicus Emergency Management Service (EMSR927); imagery Legion",
+   "confidence_tier": "verified",
+   "product_sha256": "1f57ba3370597055b1372e26771923fdebc9870a52a8d3435c847cdf0a0b8db8"
+  },
+  {
+   "dataset_id": "nepal.hazard_observed",
+   "scenario_id": "nepal",
+   "layer_name": "hazard_observed",
+   "asset_path": "nepal/hazard/observed_mask.u8",
+   "checksum": "sha256:ff84b057576f14f553ab117b9fa6498a22eafbcbf13c9ab87891ca12d8960424",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:39:24Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "raster/uint8 mask (1 = observed change)",
+   "source_name": "Derived from Sentinel-2 L2A (this pipeline)",
+   "source_url": "S2B_45RUM_20251021_0_L2A;S2C_45RUM_20261001_0_L2A",
+   "landing_page_url": "",
+   "observation_start": "S2B_45RUM_20251021_0_L2A",
+   "observation_end": "S2C_45RUM_20261001_0_L2A",
+   "published_at": "",
+   "valid_as_of": "S2C_45RUM_",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "boolean",
+   "processing_method": "Sentinel-2 L2A change detection on the model grid: debris/scour = valid in both scenes (SCL not cloud/shadow/no-data) AND [(post-pre NDVI < -0.15 and post NDVI < 0.45) OR (post NDVI < 0.18, bright, pre NDVI > 0.25)] AND (within 2 cells of a DEM-derived channel, D8 contributing area > 0.1 km2, OR within 150 m of a mapped OSM waterway); 8-connected components smaller than 8 cells (~0.006 km2) removed (no opening, so 1-cell-wide channels survive).",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Derived change indicator, NOT an official damage or flood map and not field-validated. Includes any vegetation loss near rivers between the two dates (e.g. seasonal/agricultural change); misses damage under intact canopy and in built-up areas; post-event scene is weeks-months after the event.",
+   "validation_status": "visual comparison with imagery; area reported",
+   "area_km2": 1.78
+  },
+  {
+   "dataset_id": "nepal.imagery_context",
+   "scenario_id": "nepal",
+   "layer_name": "imagery_context",
+   "asset_path": "nepal/imagery/context.jpg",
+   "checksum": "sha256:2701968d4b8fceeb646f29157cd55716dc5fadcd7463589c4dc9c18809cbf71b",
+   "bytes": 944811,
+   "retrieved_at": "2026-10-25T13:37:03Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "image/jpeg RGB",
+   "source_name": "Copernicus Sentinel-2 L2A TCI",
+   "source_url": "S2C_45RUM_20261001_0_L2A",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1",
+   "observation_start": "2026-10-01T05:10:50.234000Z",
+   "observation_end": "2026-10-01T05:10:50.234000Z",
+   "published_at": "",
+   "valid_as_of": "2026-10-01",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 14.6,
+   "units": "8-bit",
+   "processing_method": "same-day neighbouring tiles mosaicked to fill edges; cubic resample",
+   "license": "Copernicus Sentinel data terms",
+   "attribution": "Contains modified Copernicus Sentinel data 2026",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Display only. Clouds/no-data (black) possible at the edges.",
+   "validation_status": "visual check",
+   "spatial_extent_override": {
+    "size_m": 30000.0
+   }
+  },
+  {
+   "dataset_id": "nepal.imagery_s2_post",
+   "scenario_id": "nepal",
+   "layer_name": "imagery_s2_post",
+   "asset_path": "nepal/imagery/s2_post.jpg",
+   "checksum": "sha256:613f0a15f39c1f5f606f464f6ee18cd30feb8ed946f6b543c4d8d22f1d63ea89",
+   "bytes": 595099,
+   "retrieved_at": "2026-10-25T13:36:56Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/45/R/UM/2026/10/S2C_45RUM_20261001_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_45RUM_20261001_0_L2A",
+   "observation_start": "2026-10-01T05:10:50.234000Z",
+   "observation_end": "2026-10-01T05:10:50.234000Z",
+   "published_at": "2026-10-01T11:31:21.918Z",
+   "valid_as_of": "2026-10-01",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2026, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 6.9%; AOI quality from SCL: {'valid': 0.9844, 'snow': 0.0, 'water': 0.0, 'cloud_shadow': 0.0079, 'cloud_med': 0.0065, 'cloud_high': 0.0012}. Post-event; acquisition is 36 days after the event.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2C_45RUM_20261001_0_L2A",
+   "aoi_quality": {
+    "valid": 0.9844,
+    "snow": 0.0,
+    "water": 0.0,
+    "cloud_shadow": 0.0079,
+    "cloud_med": 0.0065,
+    "cloud_high": 0.0012
+   }
+  },
+  {
+   "dataset_id": "nepal.imagery_s2_pre",
+   "scenario_id": "nepal",
+   "layer_name": "imagery_s2_pre",
+   "asset_path": "nepal/imagery/s2_pre.jpg",
+   "checksum": "sha256:876e6c6680654324d5ae89b2763099fecc437f8b87691cea70f72d4e135b7ce4",
+   "bytes": 587511,
+   "retrieved_at": "2026-10-25T13:36:53Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/45/R/UM/2025/10/S2B_45RUM_20251021_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_45RUM_20251021_0_L2A",
+   "observation_start": "2025-10-21T05:10:49.074000Z",
+   "observation_end": "2025-10-21T05:10:49.074000Z",
+   "published_at": "2025-10-21T09:57:38.723Z",
+   "valid_as_of": "2025-10-21",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2025, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.5%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0005, 'water': 0.0}. Pre-event baseline.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2B_45RUM_20251021_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0005,
+    "water": 0.0
+   }
+  },
+  {
+   "dataset_id": "nepal.landcover",
+   "scenario_id": "nepal",
+   "layer_name": "landcover",
+   "asset_path": "nepal/landcover/worldcover.u8",
+   "checksum": "sha256:6e3dc8fbbeacf55f1e31e0f9252291607e7da2a6ba23bb0249f4d53890a2d00d",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:35:57Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "class_histogram": {
+    "Tree cover": 35409,
+    "Grassland": 13052,
+    "Cropland": 1,
+    "Built-up": 256,
+    "Bare / sparse vegetation": 1684,
+    "Permanent water bodies": 223
+   },
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E084_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "nepal.landcover_context",
+   "scenario_id": "nepal",
+   "layer_name": "landcover_context",
+   "asset_path": "nepal/landcover/worldcover_context.u8",
+   "checksum": "sha256:32da23d7576997e7ef6fe0e22f926ec235010c23507b1635882edd6233a8ac85",
+   "bytes": 25921,
+   "retrieved_at": "2026-10-25T13:35:57Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "grid": 161,
+   "processed_resolution_m": 187.5,
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E084_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "nepal.osm",
+   "scenario_id": "nepal",
+   "layer_name": "osm",
+   "asset_path": "nepal/vectors/osm.json",
+   "checksum": "sha256:5d22d95ce263b6c0e122841ba3d1fbde747306dac6a39ce2ebe7492f89d2be08",
+   "bytes": 111650,
+   "retrieved_at": "2026-10-25T14:20:33Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "data_type": "vector JSON (local metres, AEQD)",
+   "source_name": "OpenStreetMap (API 0.6 /map)",
+   "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=85.33683,28.23386,85.40717,28.29613",
+   "landing_page_url": "https://www.openstreetmap.org/copyright",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "2026-10-25",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres (x east, y north)",
+   "processing_method": "raw OSM XML -> ways classified by tags (highway, waterway, natural=water, building, landuse, bridge, place); projected to AEQD; clipped to AOI x1.12",
+   "license": "ODbL 1.0",
+   "attribution": "\u00a9 OpenStreetMap contributors",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Volunteered data of uneven completeness; current OSM state (may include post-event edits; does not mark damage). Attributes like surface/condition mostly absent and are NOT inferred.",
+   "validation_status": "feature counts + alignment checks",
+   "feature_counts": {
+    "roads": 15,
+    "waterways": 67,
+    "water": 6,
+    "buildings": 108,
+    "places": 4,
+    "landuse": 5,
+    "bridges": 0
+   }
+  },
+  {
+   "dataset_id": "nepal.population_belief",
+   "scenario_id": "nepal",
+   "layer_name": "population_belief",
+   "asset_path": "nepal/population/worldpop_belief.f32",
+   "checksum": "sha256:f0c5e8af28f3bbf5fa39daf3989761727cb0d30adbb4d44df5f789b210ed4cb4",
+   "bytes": 6400,
+   "retrieved_at": "2026-10-25T13:37:13Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "grid": 40,
+   "processed_resolution_m": 150.0,
+   "total": 1190.6,
+   "direct_sum": 1190.6,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, NPL (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/NPL/npl_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 1191 vs direct 1191"
+  },
+  {
+   "dataset_id": "nepal.population_grid",
+   "scenario_id": "nepal",
+   "layer_name": "population_grid",
+   "asset_path": "nepal/population/worldpop_grid.f32",
+   "checksum": "sha256:602fbcbb663ff142afc0116411373b590c5a80027d2d48ee1c722ad82eb6dffa",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:37:13Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=28.265 +lon_0=85.372 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     28.265,
+     85.372
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     85.341418,
+     28.237927,
+     85.402582,
+     28.29207
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "total": 1190.6,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, NPL (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/NPL/npl_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 1191 vs direct 1191"
+  },
+  {
+   "dataset_id": "wayanad.buildings_ml",
+   "scenario_id": "wayanad",
+   "layer_name": "buildings_ml",
+   "asset_path": "wayanad/vectors/osm.json",
+   "checksum": "sha256:127383c3d536c366580b5de89e0c1ae24fc64cc3d371e1ce40429d9d4b4115e2",
+   "bytes": 510493,
+   "retrieved_at": "2026-10-25T14:20:28Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "vector JSON (merged into osm.json, src=\"ml\")",
+   "source_name": "Google Open Buildings v3 (confidence >= 0.70)",
+   "source_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_6_gzip_no_header/3ba7_buildings.csv.gz",
+   "landing_page_url": "https://sites.research.google/open-buildings/",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "imagery dates vary (approx. 2014-2023)",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres",
+   "processing_method": "footprints within AOI x1.05 added where their centroid does not intersect an OSM building polygon; invalid polygons repaired with buffer(0); < 6 m2 dropped",
+   "license": "CC BY 4.0 / ODbL 1.0 (dual)",
+   "attribution": "Google Open Buildings v3 (CC BY 4.0)",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Machine-learning footprints from satellite imagery of mixed dates; false positives/negatives; may include buildings destroyed by the event or miss new ones. Heights are model estimates where present, otherwise unknown.",
+   "validation_status": "count + overlap with OSM checked",
+   "added": 662,
+   "osm_buildings": 1757
+  },
+  {
+   "dataset_id": "wayanad.dem",
+   "scenario_id": "wayanad",
+   "layer_name": "dem",
+   "asset_path": "wayanad/terrain/dem.f32",
+   "checksum": "sha256:aad585bcc20e3b77ae836c9942b505adca4e902b088da5ff31853e7a25c72fd8",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:35:41Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "layer_desc": "Model-grid elevation (225x225)",
+   "processed_resolution_m": 26.79,
+   "grid": 225,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N11_00_E076_00_DEM/Copernicus_DSM_COG_10_N11_00_E076_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    30.3,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 308.7601456377319,
+    "max": 1972.674025674597,
+    "mean": 1103.4008020762496,
+    "std": 279.0976121853647,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1026120
+   }
+  },
+  {
+   "dataset_id": "wayanad.dem_context",
+   "scenario_id": "wayanad",
+   "layer_name": "dem_context",
+   "asset_path": "wayanad/terrain/dem_context.f32",
+   "checksum": "sha256:bd43e9c0b3624af3f1ebdfc180b606e5211becb542f7ad8c27a1d8675bbd478c",
+   "bytes": 103684,
+   "retrieved_at": "2026-10-25T13:35:41Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "layer_desc": "Context elevation 161x161 over 30 km (display only, not used by the model)",
+   "processed_resolution_m": 187.5,
+   "grid": 161,
+   "data_type": "raster/float32",
+   "source_name": "Copernicus DEM GLO-30 (DSM), ESA / Airbus, via AWS Open Data",
+   "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N11_00_E076_00_DEM/Copernicus_DSM_COG_10_N11_00_E076_00_DEM.tif",
+   "landing_page_url": "https://registry.opendata.aws/copernicus-dem/",
+   "observation_start": "2011-01-01",
+   "observation_end": "2015-12-31",
+   "published_at": "2021 (release 2021_1+)",
+   "valid_as_of": "TanDEM-X acquisitions 2011-2015",
+   "native_resolution_m": [
+    30.3,
+    30.9
+   ],
+   "units": "metres above EGM2008 geoid",
+   "processing_method": "tile mosaic (rasterio.merge) -> bilinear sampling at AEQD grid nodes; gaps filled by nearest valid pixel",
+   "license": "Copernicus DEM licence (free, worldwide, with attribution)",
+   "attribution": "\u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Digital SURFACE model: includes canopy and buildings. Absolute vertical accuracy spec <4 m (90% LE); larger errors on steep slopes, forest and water. Pre-dates the events (2011-2015), so post-event scour/deposition is NOT represented.",
+   "validation_status": "validated (see validation_report.md)",
+   "source_meta": {
+    "crs": "EPSG:4326",
+    "res": [
+     0.0002777777777777778,
+     0.0002777777777777778
+    ],
+    "nodata": null,
+    "dtype": "float32",
+    "tags": {
+     "AREA_OR_POINT": "Point"
+    }
+   },
+   "stats": {
+    "min": 308.7601456377319,
+    "max": 1972.674025674597,
+    "mean": 1103.4008020762496,
+    "std": 279.0976121853647,
+    "nodata_filled_px": 0,
+    "mosaic_px": 1026120
+   }
+  },
+  {
+   "dataset_id": "wayanad.hazard_observed",
+   "scenario_id": "wayanad",
+   "layer_name": "hazard_observed",
+   "asset_path": "wayanad/hazard/observed_mask.u8",
+   "checksum": "sha256:30b7a4e4364317ce46a316f08ba942a9a9ac344fde77870120f5221488295f12",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:40:51Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "raster/uint8 mask (1 = observed change)",
+   "source_name": "Derived from Sentinel-2 L2A (this pipeline)",
+   "source_url": "S2B_43PFN_20240205_0_L2A;S2A_43PFN_20241216_0_L2A",
+   "landing_page_url": "",
+   "observation_start": "S2B_43PFN_20240205_0_L2A",
+   "observation_end": "S2A_43PFN_20241216_0_L2A",
+   "published_at": "",
+   "valid_as_of": "S2A_43PFN_",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 26.79,
+   "units": "boolean",
+   "processing_method": "Sentinel-2 L2A change detection on the model grid: debris/scour = valid in both scenes (SCL not cloud/shadow/no-data) AND [(post-pre NDVI < -0.15 and post NDVI < 0.45) OR (post NDVI < 0.18, bright, pre NDVI > 0.25)] AND (within 2 cells of a DEM-derived channel, D8 contributing area > 0.1 km2, OR within 150 m of a mapped OSM waterway); 8-connected components smaller than 8 cells (~0.006 km2) removed (no opening, so 1-cell-wide channels survive).",
+   "license": "derived from Copernicus Sentinel data (free and open)",
+   "attribution": "Contains modified Copernicus Sentinel data",
+   "confidence_tier": "derived",
+   "uncertainty_notes": "Derived change indicator, NOT an official damage or flood map and not field-validated. Includes any vegetation loss near rivers between the two dates (e.g. seasonal/agricultural change); misses damage under intact canopy and in built-up areas; post-event scene is weeks-months after the event.",
+   "validation_status": "visual comparison with imagery; area reported",
+   "area_km2": 0.762
+  },
+  {
+   "dataset_id": "wayanad.imagery_context",
+   "scenario_id": "wayanad",
+   "layer_name": "imagery_context",
+   "asset_path": "wayanad/imagery/context.jpg",
+   "checksum": "sha256:6ab9c7ddbdf1c376e3f58b082d2c50f3e01c6bb3fb98a96a74a0674ae365d4da",
+   "bytes": 663950,
+   "retrieved_at": "2026-10-25T13:39:04Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "image/jpeg RGB",
+   "source_name": "Copernicus Sentinel-2 L2A TCI",
+   "source_url": "S2A_43PFN_20241216_0_L2A;S2C_43PFN_20241216_1_L2A",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1",
+   "observation_start": "2024-12-16T05:35:46.705000Z",
+   "observation_end": "2024-12-16T05:35:46.705000Z",
+   "published_at": "",
+   "valid_as_of": "2024-12-16",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 14.6,
+   "units": "8-bit",
+   "processing_method": "same-day neighbouring tiles mosaicked to fill edges; cubic resample",
+   "license": "Copernicus Sentinel data terms",
+   "attribution": "Contains modified Copernicus Sentinel data 2024",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Display only. Clouds/no-data (black) possible at the edges.",
+   "validation_status": "visual check",
+   "spatial_extent_override": {
+    "size_m": 30000.0
+   }
+  },
+  {
+   "dataset_id": "wayanad.imagery_s2_post",
+   "scenario_id": "wayanad",
+   "layer_name": "imagery_s2_post",
+   "asset_path": "wayanad/imagery/s2_post.jpg",
+   "checksum": "sha256:aaa7c5562f60f9daa8f248f12e499963cf5d11bd26a0702ebe52ced0cc13d348",
+   "bytes": 463312,
+   "retrieved_at": "2026-10-25T13:38:50Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/P/FN/2024/12/S2A_43PFN_20241216_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_43PFN_20241216_0_L2A",
+   "observation_start": "2024-12-16T05:35:46.705000Z",
+   "observation_end": "2024-12-16T05:35:46.705000Z",
+   "published_at": "2024-12-16T10:34:35.314Z",
+   "valid_as_of": "2024-12-16",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2024, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 0.0%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.0}. Post-event; acquisition is 140 days after the event.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2A_43PFN_20241216_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.0
+   }
+  },
+  {
+   "dataset_id": "wayanad.imagery_s2_pre",
+   "scenario_id": "wayanad",
+   "layer_name": "imagery_s2_pre",
+   "asset_path": "wayanad/imagery/s2_pre.jpg",
+   "checksum": "sha256:a50cb7b62ff131ee780b1b59f9323ebe1fb08d4ad31a9a2150e428c776119839",
+   "bytes": 460965,
+   "retrieved_at": "2026-10-25T13:38:47Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "image/jpeg RGB (north-up, AOI square)",
+   "source_name": "Copernicus Sentinel-2 L2A true-colour (TCI) via Earth Search / AWS Open Data",
+   "source_url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/P/FN/2024/2/S2B_43PFN_20240205_0_L2A/TCI.tif",
+   "landing_page_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_43PFN_20240205_0_L2A",
+   "observation_start": "2024-02-05T05:35:45.515000Z",
+   "observation_end": "2024-02-05T05:35:45.515000Z",
+   "published_at": "2024-02-05T10:10:43.739Z",
+   "valid_as_of": "2024-02-05",
+   "native_resolution_m": 10,
+   "processed_resolution_m": 2.93,
+   "units": "8-bit TCI reflectance rendering",
+   "processing_method": "cubic reprojection of the TCI COG onto the AEQD AOI square (2048 px); JPEG q88",
+   "license": "Copernicus Sentinel data terms (free, full and open)",
+   "attribution": "Contains modified Copernicus Sentinel data 2024, processed by Element 84 / Sinergise L2A",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Scene cloud 1.1%; AOI quality from SCL: {'valid': 1.0, 'snow': 0.0, 'water': 0.0}. Pre-event baseline.",
+   "validation_status": "visual check + SCL quality",
+   "item_id": "S2B_43PFN_20240205_0_L2A",
+   "aoi_quality": {
+    "valid": 1.0,
+    "snow": 0.0,
+    "water": 0.0
+   }
+  },
+  {
+   "dataset_id": "wayanad.landcover",
+   "scenario_id": "wayanad",
+   "layer_name": "landcover",
+   "asset_path": "wayanad/landcover/worldcover.u8",
+   "checksum": "sha256:06cce169b4ecdb34be0c42f02cd6b22c9a46e72cc7f4dbd64d2ed36d8d7b0ea3",
+   "bytes": 50625,
+   "retrieved_at": "2026-10-25T13:35:43Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "class_histogram": {
+    "Tree cover": 46798,
+    "Grassland": 3694,
+    "Cropland": 5,
+    "Built-up": 119,
+    "Bare / sparse vegetation": 5,
+    "Permanent water bodies": 4
+   },
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N09E075_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "wayanad.landcover_context",
+   "scenario_id": "wayanad",
+   "layer_name": "landcover_context",
+   "asset_path": "wayanad/landcover/worldcover_context.u8",
+   "checksum": "sha256:23007bd3906008babed4c7753b264f073cea11121a68c433886ac6b2a60788b8",
+   "bytes": 25921,
+   "retrieved_at": "2026-10-25T13:35:43Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "grid": 161,
+   "processed_resolution_m": 187.5,
+   "data_type": "raster/uint8 categorical",
+   "source_name": "ESA WorldCover 10 m 2021 v200",
+   "source_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N09E075_Map.tif",
+   "landing_page_url": "https://esa-worldcover.org/en/data-access",
+   "observation_start": "2021-01-01",
+   "observation_end": "2021-12-31",
+   "published_at": "2022-10-28",
+   "valid_as_of": "2021",
+   "native_resolution_m": 10,
+   "units": "class code (ESA WorldCover legend)",
+   "processing_method": "GDAL mode (majority) resampling to one pixel per grid node; categorical-safe",
+   "license": "CC BY 4.0",
+   "attribution": "\u00a9 ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Global map, reported overall accuracy ~76.7%. 2021 snapshot: pre-dates the 2024-2026 events and post-dates Assam 2022 by ~0 years; does not show event damage.",
+   "validation_status": "class histogram checked"
+  },
+  {
+   "dataset_id": "wayanad.osm",
+   "scenario_id": "wayanad",
+   "layer_name": "osm",
+   "asset_path": "wayanad/vectors/osm.json",
+   "checksum": "sha256:06dcbfa53f7d21582c2aa48c1e18d48e89d42212337d646ee255ea38d0e9332d",
+   "bytes": 416319,
+   "retrieved_at": "2026-10-25T14:20:28Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "data_type": "vector JSON (local metres, AEQD)",
+   "source_name": "OpenStreetMap (API 0.6 /map)",
+   "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=76.11838,11.45581,76.18162,11.51819",
+   "landing_page_url": "https://www.openstreetmap.org/copyright",
+   "observation_start": "",
+   "observation_end": "",
+   "published_at": "",
+   "valid_as_of": "2026-10-25",
+   "native_resolution_m": null,
+   "processed_resolution_m": null,
+   "units": "metres (x east, y north)",
+   "processing_method": "raw OSM XML -> ways classified by tags (highway, waterway, natural=water, building, landuse, bridge, place); projected to AEQD; clipped to AOI x1.12",
+   "license": "ODbL 1.0",
+   "attribution": "\u00a9 OpenStreetMap contributors",
+   "confidence_tier": "verified",
+   "uncertainty_notes": "Volunteered data of uneven completeness; current OSM state (may include post-event edits; does not mark damage). Attributes like surface/condition mostly absent and are NOT inferred.",
+   "validation_status": "feature counts + alignment checks",
+   "feature_counts": {
+    "roads": 191,
+    "waterways": 55,
+    "water": 5,
+    "buildings": 1757,
+    "places": 10,
+    "landuse": 6,
+    "bridges": 5
+   }
+  },
+  {
+   "dataset_id": "wayanad.population_belief",
+   "scenario_id": "wayanad",
+   "layer_name": "population_belief",
+   "asset_path": "wayanad/population/worldpop_belief.f32",
+   "checksum": "sha256:57ccc5232bd5ebbffa95e994a58a9c224817c150df2b8d46ff9874bf11464c75",
+   "bytes": 6400,
+   "retrieved_at": "2026-10-25T13:39:28Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "grid": 40,
+   "processed_resolution_m": 150.0,
+   "total": 1134.7,
+   "direct_sum": 1134.7,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 1135 vs direct 1135"
+  },
+  {
+   "dataset_id": "wayanad.population_grid",
+   "scenario_id": "wayanad",
+   "layer_name": "population_grid",
+   "asset_path": "wayanad/population/worldpop_grid.f32",
+   "checksum": "sha256:a26227ee91dd96d3a9e3650cfb6a6dcc1ca8536e65a17359ba4f373c7bdb6199",
+   "bytes": 202500,
+   "retrieved_at": "2026-10-25T13:39:28Z",
+   "processing_version": "0.4.0",
+   "crs": "+proj=aeqd +lat_0=11.487 +lon_0=76.15 +datum=WGS84 +units=m +no_defs",
+   "spatial_extent": {
+    "center": [
+     11.487,
+     76.15
+    ],
+    "size_m": 6000,
+    "bbox_ll": [
+     76.122501,
+     11.459878,
+     76.177499,
+     11.51412
+    ]
+   },
+   "grid": 225,
+   "processed_resolution_m": 26.79,
+   "total": 1134.7,
+   "data_type": "raster/float32 (people per cell)",
+   "source_name": "WorldPop 2020 constrained, top-down, IND (ppp)",
+   "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/IND/ind_ppp_2020_constrained.tif",
+   "landing_page_url": "https://hub.worldpop.org/geodata/listing?id=78",
+   "observation_start": "2020-01-01",
+   "observation_end": "2020-12-31",
+   "published_at": "2020",
+   "valid_as_of": "2020 (modelled)",
+   "native_resolution_m": 100,
+   "units": "estimated residents per cell",
+   "processing_method": "GDAL sum resampling onto the AEQD grid (sum-preserving); checked against a direct sum of source pixel centres inside the AOI",
+   "license": "CC BY 4.0",
+   "attribution": "WorldPop (www.worldpop.org) \u2014 Bondarenko M. et al. 2020, constrained estimates, University of Southampton. doi:10.5258/SOTON/WP00684",
+   "confidence_tier": "modelled",
+   "uncertainty_notes": "Modelled RESIDENT population for 2020 constrained to settlement areas; not event-day occupancy, not exposed people, not people requiring assistance. Census-based and may under-count tourists, workers and seasonal populations.",
+   "validation_status": "sum check: grid 1135 vs direct 1135"
+  }
+ ],
+ "updated": "2026-10-25T15:51:41Z"
+}
